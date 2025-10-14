@@ -10,11 +10,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface menuDropDownProps {
-    onNavigate: () => void
+    onNavigate: () => void;
+    afterNavigate?: () => void;
 }
 
 function MenuDropDown({
-    onNavigate
+    onNavigate,
+    afterNavigate
 }: menuDropDownProps) {
     const [display, setDisplay] = useState(false);
     const navigate = useNavigate();
@@ -24,7 +26,8 @@ function MenuDropDown({
         onNavigate();
         setTimeout(() => {
             navigate(to);
-        }, 1000)
+            afterNavigate?.();
+        }, 1000);
     }
 
     const Card = () => (

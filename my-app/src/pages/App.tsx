@@ -19,7 +19,9 @@ function App() {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <MenuDropDown onNavigate={() => {setLoaded(false)}}/>
+                <MenuDropDown onNavigate={() => {
+                    setLoaded(false);
+                }}/>
             </div>
             <div className={styles.body}>
                 <UserAvatar url="https://i.pinimg.com/1200x/df/99/2d/df992d4f3d0c75af24a3dd64b2306107.jpg" />
