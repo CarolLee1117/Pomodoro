@@ -1,0 +1,41 @@
+.button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border-radius: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 12px;
+    padding-right: 20px;
+    width: 300px;
+    font-size: 35px;
+    font-family: var(--font-angkor);
+    color: #788257;
+    background-color: transparent;
+    position: relative;
+    height: 75px;
+    align-items: center;
+    user-select: none;
+}
+
+.button:hover {
+    color: #F6FFD8;
+    background-color: #BBD26E;
+}
+
+.button > svg {
+    height: 90%;
+}
+
+/* 只作用在 IconButton 包的 link */
+.iconButtonLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.iconButtonLink:hover,
+.iconButtonLink:focus,
+.iconButtonLink:visited {
+  text-decoration: none;
+  color: inherit;
+}

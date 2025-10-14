@@ -1,0 +1,10 @@
+.text {
+    font-family: var(--font-annapurna);
+    font-size: 24px;
+    user-select: none;
+}
+
+.text > p {
+    color: #788257;
+    text-align: center;
+}

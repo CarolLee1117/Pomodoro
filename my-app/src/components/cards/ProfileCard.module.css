@@ -1,0 +1,44 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #e8f8ce;
+    padding: 25px;
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+}
+
+p {
+    margin: 0;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 3em;
+}
+
+.topic, .data {
+    font-family: var(--font-annapurna);
+    font-size: 24px;
+}
+
+.topic {
+    flex: 1;
+    color: #788257;
+    min-width: 150px
+}
+
+.data {
+    flex: 1;
+    color: #57825B;
+}
+
+input.data {
+    background: none;
+    border: none;
+    outline: none;
+}
