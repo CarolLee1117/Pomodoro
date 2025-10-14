@@ -1,17 +1,25 @@
-import TextButton from "./components/buttons/TextButton/TextButton";
-import UserAvatar from "./components/avatars/UserAvatar";
+import TextButton from "../components/buttons/TextButton/TextButton";
+import UserAvatar from "../components/avatars/UserAvatar";
 import styles from "./App.module.css";
-import FunctionalIcon from "./components/icons/FunctionalIcon";
-import GroupIcon from "./components/icons/icons/GroupIcon";
-import Text from "./components/texts/Text";
-import MenuDropDown from "./components/drop_downs/MenuDropDown";
+import FunctionalIcon from "../components/icons/FunctionalIcon";
+import GroupIcon from "../components/icons/icons/GroupIcon";
+import Text from "../components/texts/Text";
+import MenuDropDown from "../components/drop_downs/MenuDropDown";
+import CoveredFadeIn from "../components/animate/CoveredFadeIn/CoveredFadeIn";
+import { useEffect, useState } from "react";
 
 
 function App() {
+    const [loaded, setLoaded] = useState(false);
+    
+    useEffect(() => {
+        setLoaded(true);
+    }, []);
+
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <MenuDropDown/>
+                <MenuDropDown onNavigate={() => {setLoaded(false)}}/>
             </div>
             <div className={styles.body}>
                 <UserAvatar url="https://i.pinimg.com/1200x/df/99/2d/df992d4f3d0c75af24a3dd64b2306107.jpg" />
@@ -31,6 +39,7 @@ function App() {
                     onClick={() => {alert("about us")}}
                 />
             </div>
+            <CoveredFadeIn isLoaded={loaded} />
         </div>
     );
 }

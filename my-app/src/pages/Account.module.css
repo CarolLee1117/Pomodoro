@@ -1,0 +1,49 @@
+/* header 固定在最上方，不佔 layout 高度 */
+.header {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    height: min-content;
+    display: flex; justify-content: space-between;
+    padding: 20px;
+}
+
+/* 整頁容器 */
+.container {
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ⭐ 版面核心：左右兩欄、右欄上下兩列 */
+.content {
+    min-height: 100vh;                 /* 讓內容相對整個視窗置中 */
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;                /* 垂直置中每一列 */
+    justify-content: center;            /* 整個 grid 置中在畫面 */
+    row-gap: 28px;                      /* 卡片與按鈕的垂直間距 */
+    padding: 0 40px;                    /* 左右內距，避免貼邊 */
+}
+
+.mainBtnText { 
+    font-size: 50px; 
+}
+.mainBtn     { 
+    width: 250px; 
+    height: 90px; 
+}
+
+.row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 50px;
+}

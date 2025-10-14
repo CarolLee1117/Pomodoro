@@ -1,6 +1,9 @@
 .container {
     position: relative;
     height: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .cardContainer {

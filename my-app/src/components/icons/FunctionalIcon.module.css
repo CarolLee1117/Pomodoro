@@ -2,14 +2,30 @@
     width: 50px;
     height: 50px;
     margin: 20px;
-    transition: all 0.2s linear;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 動畫 */
+    transition: transform 0.2s linear;
+
+    /* 統一外觀：同時適用於 <a> 與 <button> */
+    background: transparent;     /* 移除白底 */
+    border: 0;                   /* 移除預設邊框 */
+    padding: 0;
+    line-height: 0;
+    appearance: none;            /* Safari */
+    -webkit-appearance: none;
+
+    color: inherit;              /* 文字/圖示顏色繼承 */
+    text-decoration: none;       /* Link 無底線 */
+    cursor: pointer;
 }
 
 .icon > svg {
-    color: #788257;
+  color: #788257;
 }
 
 .icon:hover {
-    width: 60px;
-    height: 60px;
+  transform: scale(1.2);
 }

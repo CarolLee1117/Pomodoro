@@ -1,0 +1,12 @@
+.container {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+}

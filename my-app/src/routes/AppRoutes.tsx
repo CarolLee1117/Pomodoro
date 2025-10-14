@@ -1,6 +1,6 @@
 import { useRoutes } from "react-router-dom";
-import App from "../App";
-import Account from "../Account";
+import App from "../pages/App";
+import Account from "../pages/Account";
 
 function AppRoutes() {
   // 用 useRoutes 定義所有路由表

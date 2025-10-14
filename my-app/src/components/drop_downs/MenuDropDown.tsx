@@ -7,39 +7,54 @@ import ThemeIcon from "../icons/icons/ThemeIcon";
 import StatsIcon from "../icons/icons/StatsIcon";
 import SignOutIcon from "../icons/icons/SignOutIcon";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function MenuDropDown() {
+interface menuDropDownProps {
+    onNavigate: () => void
+}
+
+function MenuDropDown({
+    onNavigate
+}: menuDropDownProps) {
     const [display, setDisplay] = useState(false);
+    const navigate = useNavigate();
     // useState 是其中一種 hook，是使用 setDisplay 函式去更改 display 常數的作法，display 預設值為 false
+
+    const handleNavigation = (to: string) => {
+        onNavigate();
+        setTimeout(() => {
+            navigate(to);
+        }, 1000)
+    }
 
     const Card = () => (
         <div className={styles.card}>
             <div>
                 <IconButton 
                     icon={AccountIcon} 
+                    onClick={() => handleNavigation("/account")}
                     text="Account"
-                    to="/account"
                 />
             </div>
             <div>
                 <IconButton 
                     icon={ThemeIcon} 
+                    onClick={() => handleNavigation("/theme")}
                     text="Theme"
-                    to="/theme"
                 />
             </div>
             <div>
                 <IconButton 
                     icon={StatsIcon} 
+                    onClick={() => handleNavigation("/stats")}
                     text="Stats"
-                    to="/stats"
                 />
             </div>
             <div>
                 <IconButton 
                     icon={SignOutIcon} 
+                    onClick={() => handleNavigation("/sign_out")}
                     text="Sign Out"
-                    to="/sign_out"
                 />
             </div>
         </div>
