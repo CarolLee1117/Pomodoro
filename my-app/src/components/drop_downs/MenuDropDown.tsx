@@ -24,7 +24,7 @@ function MenuDropDown({
         onNavigate();
         setTimeout(() => {
             navigate(to);
-        }, 1000)
+        }, 1500)
     }
 
     const Card = () => (
