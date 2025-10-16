@@ -1,6 +1,6 @@
 import type { iconProps } from "./BaseIcon";
 
-function StatsIcon ({ 
+function InsightsIcon ({ 
     color="currentColor"
 }: iconProps) {
     return (
@@ -11,4 +11,4 @@ function StatsIcon ({
     );
 }
 
-export default StatsIcon;
+export default InsightsIcon;

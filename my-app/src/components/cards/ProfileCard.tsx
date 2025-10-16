@@ -5,31 +5,56 @@ interface profileCardProps {
     pwd: string;
     email: string;
     birthday: string;
+    editable: boolean;
+    onChange: (key: string, value: string) => void;
 }
 
 function ProfileCard({
-    name = "",
-    pwd = "",
-    email = "",
-    birthday = ""
+    name,
+    pwd,
+    email,
+    birthday,
+    editable,
+    onChange
 }: profileCardProps) {
     return (
         <div className={styles.card}>
-            <div className={styles.row}>
+            <div className={`${styles.row} ${editable ? styles.editableRow : ""}`}>
                 <p className={styles.topic}>Username</p>
-                <p className={styles.data}>{name}</p>
+                <input
+                    className={styles.data}
+                    value={name}
+                    readOnly={!editable}
+                    onChange={(e) => onChange("name", e.target.value)}
+                />
             </div>
-            <div className={styles.row}>
+            <div className={`${styles.row} ${editable ? styles.editableRow : ""}`}>
                 <p className={styles.topic}>Password</p>
-                <input className={styles.data} value={pwd} type="password" readOnly />
+                <input
+                    className={styles.data}
+                    type="password"
+                    value={pwd}
+                    readOnly={!editable}
+                    onChange={(e) => onChange("pwd", e.target.value)}
+                />
             </div>
-            <div className={styles.row}>
+            <div className={`${styles.row} ${editable ? styles.editableRow : ""}`}>
                 <p className={styles.topic}>Email</p>
-                <p className={styles.data}>{email}</p>
+                <input
+                    className={styles.data}
+                    value={email}
+                    readOnly={!editable}
+                    onChange={(e) => onChange("email", e.target.value)}
+                />
             </div>
-            <div className={styles.row}>
+            <div className={`${styles.row} ${editable ? styles.editableRow : ""}`}>
                 <p className={styles.topic}>Birthday</p>
-                <p className={styles.data}>{birthday}</p>
+                <input
+                    className={styles.data}
+                    value={birthday}
+                    readOnly={!editable}
+                    onChange={(e) => onChange("birthday", e.target.value)}
+                />
             </div>
         </div>
     );

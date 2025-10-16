@@ -1,15 +1,13 @@
-/* header 固定在最上方，不佔 layout 高度 */
 .header {
     position: absolute;
     top: 0; 
-    left: 0; 
+    left: 0;
     width: 100%;
     height: min-content;
     display: flex; justify-content: space-between;
-    padding: 20px;
+    padding: 2px;
 }
 
-/* 整頁容器 */
 .container {
     min-height: 100vh;
     width: 100vw;
@@ -20,7 +18,6 @@
     align-items: center;
 }
 
-/* ⭐ 版面核心：左右兩欄、右欄上下兩列 */
 .content {
     min-height: 100vh;                 /* 讓內容相對整個視窗置中 */
     width: min-content;

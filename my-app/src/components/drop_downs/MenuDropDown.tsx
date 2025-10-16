@@ -4,7 +4,7 @@ import MenuIcon from "../icons/icons/MenuIcon";
 import IconButton from "../buttons/IconButtton/IconButton";
 import AccountIcon from "../icons/icons/AccountIcon";
 import ThemeIcon from "../icons/icons/ThemeIcon";
-import StatsIcon from "../icons/icons/StatsIcon";
+import InsightsIcon from "../icons/icons/InsightsIcon";
 import SignOutIcon from "../icons/icons/SignOutIcon";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -48,9 +48,9 @@ function MenuDropDown({
             </div>
             <div>
                 <IconButton 
-                    icon={StatsIcon} 
-                    onClick={() => handleNavigation("/stats")}
-                    text="Stats"
+                    icon={InsightsIcon} 
+                    onClick={() => handleNavigation("/insights")}
+                    text="Insights"
                 />
             </div>
             <div>
