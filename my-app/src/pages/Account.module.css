@@ -4,7 +4,8 @@
     left: 0;
     width: 100%;
     height: min-content;
-    display: flex; justify-content: space-between;
+    display: flex; 
+    justify-content: space-between;
     padding: 2px;
 }
 

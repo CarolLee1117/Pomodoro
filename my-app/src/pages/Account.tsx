@@ -59,7 +59,7 @@ function Account() {
 				</div>
 				<div className={styles.row}>
 					<TextButton
-						text={editable ? "Save !" : "Edit !"}
+						text={editable ? "Save" : "Edit"}
 						buttonClass={styles.mainBtn}
 						textClass={styles.mainBtnText}
 						onClick={handleEditToggle}

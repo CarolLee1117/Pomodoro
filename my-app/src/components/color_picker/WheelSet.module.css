@@ -1,0 +1,23 @@
+.colorSlider {
+    -webkit-appearance: none; /* 移除預設樣式 */
+    width: 250px;
+    height: 36px;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔘 自訂滑塊樣式 (WebKit, Chrome/Safari) */
+.colorSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* 圓形 */
+    background: transparent;
+    border: 5px solid #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 0px; /* 調整垂直對齊 */
+}

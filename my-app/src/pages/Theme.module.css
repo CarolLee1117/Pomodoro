@@ -1,0 +1,74 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.header {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height: min-content;
+    justify-content: space-between;
+    padding: 2px;
+    top: 0; 
+    left: 0;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;                /* 垂直置中每一列 */
+    justify-content: center;            /* 整個 grid 置中在畫面 */
+    min-height: 100vh;                 /* 讓內容相對整個視窗置中 */
+    width: min-content;
+    row-gap: 28px;                      /* 卡片與按鈕的垂直間距 */
+    padding: 0 40px; 
+}
+
+.row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 50px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;                /* 垂直置中每一列 */
+    justify-content: center;            /* 整個 grid 置中在畫面 */
+    gap: 10px
+    
+
+}
+
+.mainBtnText { 
+    font-size: 50px; 
+}
+
+.resetBtn     { 
+    width: 220px; 
+    height: 85px; 
+}
+
+.saveBtn     { 
+    width: 200px; 
+    height: 85px; 
+}
+
+.wheel {
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+}
+
+.slider {
+    border-radius: 5px;
+    height: 50px;
+}
