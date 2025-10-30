@@ -23,44 +23,38 @@
 .content {
     display: flex;
     flex-direction: column;
-    align-items: center;                /* 垂直置中每一列 */
-    justify-content: center;            /* 整個 grid 置中在畫面 */
-    min-height: 100vh;                 /* 讓內容相對整個視窗置中 */
+    justify-content: center;
+    align-items: flex-end;
+    height: 750px;
     width: min-content;
-    row-gap: 28px;                      /* 卡片與按鈕的垂直間距 */
-    padding: 0 40px; 
+    justify-content: flex-end;
+    row-gap: 25px;  
 }
 
 .row {
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
-    width: 100%;
-    gap: 50px;
+    align-items: flex-start;
+    width: 1200px;
+    height: 600px;
+    padding: 40px 50px 40px 60px;
+    gap: 80px;
+    background-color: #F6FFD8;
+    border-radius: 8px;
 }
 
-.column {
+.leftColumn {
     display: flex;
     flex-direction: column;
-    align-items: center;                /* 垂直置中每一列 */
-    justify-content: center;            /* 整個 grid 置中在畫面 */
-    gap: 10px
-    
-
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 280px;
 }
 
-.mainBtnText { 
-    font-size: 50px; 
-}
-
-.resetBtn     { 
-    width: 220px; 
-    height: 85px; 
-}
-
-.saveBtn     { 
-    width: 200px; 
-    height: 85px; 
+.topicText {
+    color: #788257;
+    font-size: 30px;
 }
 
 .wheel {
@@ -71,4 +65,105 @@
 .slider {
     border-radius: 5px;
     height: 50px;
+    width: 100% !important;
+}
+
+.copyRow {
+    display: flex;
+    align-items: flex-end;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.hexText {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #E9F3C8;
+    border-radius: 8px;
+    color: #788257;
+    height: 50px;
+    width: 200px;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.copyBtn {
+    width: 150px;
+    height: 50px;
+}
+
+.copyBtnText {
+    font-size: 25px;
+}
+
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 750px;
+}
+
+.blocksRow {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    width: 750px;
+    height: 70px;
+}
+
+.usageText {
+    color: #788257;
+    height: 60px;
+    width: 632px;
+    margin-top: 20px;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promptText {
+    color: #788257;
+    height: 60px;
+    width: 632px;
+    margin-top: 20px;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E9F3C8;
+    border-radius: 8px;
+}
+
+.bottomBtnRow {
+    display: flex;
+    align-items: flex-end;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.resetBtn { 
+    width: 175px;
+    height: 65px;
+}
+
+.saveBtn  { 
+    width: 155px;
+    height: 65px;
+}
+
+.mainBtnText { 
+    font-size: 40px;
 }

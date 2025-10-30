@@ -1,0 +1,114 @@
+.container {
+    background-color: var(--c-bg);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    border-radius: 10px;
+    background-color: var(--c-card);
+    padding: 20px;
+}
+
+.iconRow {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 10px;
+    justify-content: center
+}
+
+.prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--c-prompt);
+    padding: 20px 30px 20px 30px;
+    border-radius: 10px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center
+}
+
+.card {
+    background-color: var(--c-dropdown-card);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    color: var(--c-icon);
+}
+
+.iconText {
+    color: var(--c-dropdown-text);
+}
+
+.iconText:hover {
+    color: var(--c-dropdown-hover-text);
+}
+
+.textLabel {
+  font-size: 25px;
+}
+
+.dropdownBtn {
+    height: 50px;
+    width: 230px;
+    justify-content: center;
+    background-color: var(--c-dropdown-card);
+}
+
+.dropdownBtn:hover {
+    background-color: var(--c-dropdown-hover-bg);
+}
+
+.buttonText {
+    font-size: 25px;
+    color: var(--c-button-text);
+
+}
+
+.buttonText:hover {
+    color: var(--c-button-hover-text);
+    /* 這邊有問題，不能變色 */
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--c-button);
+}
+
+.button:hover {
+    background-color: var(--c-button-hover-bg);
+}
+
+.mainText {
+    font-size: 22px;
+    color: var(--c-main-text);
+    padding-top: 20px;
+}
+
+.secondaryText {
+    font-size: 22px;
+    color: var(--c-secondary-text);
+}

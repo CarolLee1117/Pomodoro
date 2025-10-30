@@ -1,3 +1,8 @@
+.button .iconContainer,
+.button .iconText {
+  color: inherit;
+}
+
 .button {
     display: flex;
     flex-direction: row;
@@ -10,7 +15,7 @@
     width: 300px;
     font-size: 35px;
     font-family: var(--font-angkor);
-    color: #788257;
+    color: var(--c-icon);
     background-color: transparent;
     position: relative;
     height: 75px;
@@ -19,12 +24,13 @@
 }
 
 .button:hover {
-    color: #F6FFD8;
-    background-color: #BBD26E;
+    color: var(--c-dropdown-hover-text);
+    background-color: var(--c-button);
 }
 
-.button > svg {
+.iconContainer > svg {
     height: 90%;
+    width: auto;
 }
 
 /* 只作用在 IconButton 包的 link */
@@ -38,4 +44,14 @@
 .iconButtonLink:visited {
   text-decoration: none;
   color: inherit;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text { 
+  color: inherit; 
 }

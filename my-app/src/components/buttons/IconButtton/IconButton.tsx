@@ -6,23 +6,33 @@ interface iconButtonProps {
     text: string,
     iconClass?: string,
     buttonClass?: string;
+    textClass?: string;
     onClick?: () => void,
+    size?: string,
 }
 
 function IconButton ({
     icon: ButtonIcon,  // 符合使用 iconProps 參數的規範，實作出一個型別是 Icon 的元件 ButtonIcon。
     text,
     buttonClass="",
-    onClick
+    textClass="",
+    onClick,
+    size="50px",
 }: iconButtonProps
 ) {
   return (
     <button
-      className={`${styles.button} ${buttonClass}`}
-      onClick={onClick}
+        className={`${styles.button} ${buttonClass}`}
+        onClick={onClick}
     >
-      <ButtonIcon />
-      {text}
+    <div className={styles.iconContainer} 
+        style={{
+            width: size,
+            height: size
+        }}>
+        <ButtonIcon/>
+    </div>
+        <p className={`${styles.text} ${textClass || ""}`}>{text}</p>
     </button>
   );
 }

@@ -25,7 +25,13 @@
 }
 
 .mainBtn {
-    margin-top: 50px;
+    margin-top: 40px;
     width: 250px;
     height: 90px;
+}
+
+.text {
+    font-size: 35px;
+    color: #788257;
+    padding-top: 20px;
 }

@@ -33,5 +33,5 @@
 }
 
 .button:hover .label {
-    color:#57825B;
+    color: var(--c-button-hover-text);
 }

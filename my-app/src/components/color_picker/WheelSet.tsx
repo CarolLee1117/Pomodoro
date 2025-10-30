@@ -1,6 +1,6 @@
 import { useState, Fragment, useEffect } from 'react';
 import Wheel from '@uiw/react-color-wheel';
-import ShadeSlider from '@uiw/react-color-shade-slider';
+// import ShadeSlider from '@uiw/react-color-shade-slider';
 import { color, hexToHsva, hsvaToHex } from '@uiw/color-convert';
 import styles from './WheelSet.module.css';
 
@@ -14,6 +14,7 @@ interface wheelSetProps {
 export default function WheelSet({
     value,
     wheelClass="",
+    sliderClass="",
     onChange
 }: wheelSetProps) {
     const [hsva, setHsva] = useState(hexToHsva(value));
@@ -29,6 +30,8 @@ export default function WheelSet({
                 className={wheelClass}
                 color={hsva}
                 onChange={(color) => setHsva(color.hsva)}
+                width={270} 
+                height={270}
             />
             {/* <ShadeSlider
                 className={sliderClass}
@@ -38,7 +41,7 @@ export default function WheelSet({
             /> */}
             <input 
                 type="range" 
-                className={styles.colorSlider} 
+                className={`${styles.colorSlider} ${sliderClass}`} 
                 min="0" 
                 max="100" 
                 value={colorV} 

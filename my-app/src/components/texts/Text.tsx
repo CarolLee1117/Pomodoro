@@ -3,26 +3,15 @@ import styles from "./Text.module.css";
 
 interface textProps {
     text: ReactNode;
-    color?: string;
-    textAlign?: CSSProperties["textAlign"];
-    fontSize?: CSSProperties["fontSize"];
+    textClass?: string;
 }
 
 function Text({
     text,
-    color,
-    textAlign,
-    fontSize
+    textClass=""
 }: textProps) { 
     return (
-        <p 
-            className={styles.text} 
-            style={{
-                color: color ?? "#788257",
-                textAlign: textAlign ?? "center",
-                fontSize: fontSize ?? "24px"
-            }}
-        >
+        <p className={`${styles.text} ${textClass}`} >
             {text}
         </p>
     );

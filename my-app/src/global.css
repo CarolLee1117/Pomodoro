@@ -16,6 +16,28 @@
 :root {
     --font-angkor: "Angkor", serif;
     --font-annapurna: "Annapurna SIL", serif;
+
+    --c-icon: #788257;
+    --c-main-text: #788257;
+    --c-dropdown-text: #788257;
+
+    --c-button: #BBD26E;
+    --c-dropdown-hover-bg: #BBD26E;
+
+    --c-secondary-text: #57825B;
+    --c-button-hover-text: #57825B;
+
+    --c-button-hover-bg: #A8CD98;
+
+    --c-card: #F6FFD8;
+    --c-button-text: #F6FFD8;
+    --c-dropdown-hover-text: #F6FFD8;
+
+    --c-dropdown-card: #CEE5A3;
+
+    --c-bg: #DAF1C4;
+    
+    --c-prompt: #E9F3C8;
 }
 
 * {
