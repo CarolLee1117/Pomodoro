@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    height: 100%;
+    width: 380px;
+    background-color: #f6ffd8a3;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.topic {
+    color: #788257;
+    font-size: 60px;
+    font-family: var(--font-angkor);
+    user-select: none;
+}
+
+.promptText {
+    color: #788257;
+    font-size: 15px;
+    user-select: none;
+}
+
+.input {
+    font-size: 25px;
+    outline: none;  /* 移除黑框*/
+    color: #788257;
+    border-radius: 10px;
+    background-color: #F6FFD8;
+    padding: 10px 20px;
+    font-family: "Annapurna SIL", serif;
+    /* border: 2px solid transparent; */
+    transition: 
+        box-shadow 0.5s ease,
+        background-color 0.5s ease
+    
+}
+
+.input:focus {
+    box-shadow: 0 0 8px 2px rgba(120, 130, 87, 0.2);
+}
+
+.input:hover {
+    background-color: #78825743;
+}
+
+.input::selection {    /* 反白 */
+    background: #57575732;
+}
+
+
+.buttonText {
+    font-size: 30px;
+    user-select: none;
+}
+
+.button {
+    height: 55px;
+    width: 160px;
+    border-radius: 30px;
+}

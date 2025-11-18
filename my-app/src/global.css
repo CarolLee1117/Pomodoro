@@ -15,6 +15,7 @@
 
 :root {
     --font-angkor: "Angkor", serif;
+    /* --font-angkor: "Annapurna", serif; */
     --font-annapurna: "Annapurna SIL", serif;
 
     --c-icon: #788257;
@@ -53,3 +54,7 @@ body {
     
 }
 
+.w-color-wheel-pointer {
+    width: min-content;
+    height: min-content;
+}

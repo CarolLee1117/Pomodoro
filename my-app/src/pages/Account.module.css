@@ -31,11 +31,12 @@
 }
 
 .mainBtnText { 
-    font-size: 50px; 
+    font-size: 40px; 
 }
 .mainBtn     { 
-    width: 250px; 
-    height: 90px; 
+    width: 160px;
+    height: 80px;
+    align-items: center
 }
 
 .row {

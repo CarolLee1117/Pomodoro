@@ -155,13 +155,15 @@
 }
 
 .resetBtn { 
-    width: 175px;
-    height: 65px;
+    width: 200px;
+    height: 80px;
+    align-items: center
 }
 
 .saveBtn  { 
-    width: 155px;
-    height: 65px;
+    width: 170px;
+    height: 80px;
+    align-items: center
 }
 
 .mainBtnText { 

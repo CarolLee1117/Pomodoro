@@ -1,14 +1,14 @@
-import { useState, Fragment, useEffect } from 'react';
 import Wheel from '@uiw/react-color-wheel';
-// import ShadeSlider from '@uiw/react-color-shade-slider';
-import { color, hexToHsva, hsvaToHex } from '@uiw/color-convert';
 import styles from './WheelSet.module.css';
+import type { HsvaColor } from '@uiw/color-convert';
+import { useState, Fragment, useEffect, useRef } from 'react';
+import { hexToHsva, hsvaToHex } from '@uiw/color-convert';
 
 interface wheelSetProps {
     value: string,
     wheelClass?: string,
     sliderClass?: string,
-    onChange: (e: string) => void
+    onChange: (hex: string) => void
 }
 
 export default function WheelSet({
@@ -17,40 +17,50 @@ export default function WheelSet({
     sliderClass="",
     onChange
 }: wheelSetProps) {
-    const [hsva, setHsva] = useState(hexToHsva(value));
-    const [colorV, setColorV] = useState("0");
+    const [hsva, setHsva] = useState<HsvaColor>(() => hexToHsva(value));
+    const syncingFromProp = useRef(false);   // 防止回圈閃跳
+    const [isSliding, setIsSliding] = useState(false); // 正在拉 slider
 
     useEffect(() => {
-        onChange?.(hsvaToHex(hsva));
-    }, [hsva]);
+        syncingFromProp.current = true;
+        setHsva((prev) => isSliding ? prev : hexToHsva(value));
+    }, [value]);
+
+    useEffect(() => {
+        if (syncingFromProp.current) {
+            syncingFromProp.current = false;
+            return; // 跳過這次（是外部同步）
+        }
+        onChange?.(hsvaToHex(hsva).toUpperCase());
+    }, [hsva, onChange]);
+
+    const sliderValue = 100 - hsva.v;
+    const gradientLeft  = hsvaToHex({ ...hsva, v: 100 });
+    const gradientRight = hsvaToHex({ ...hsva, v: 0 });
 
     return (
         <Fragment>
             <Wheel
                 className={wheelClass}
                 color={hsva}
-                onChange={(color) => setHsva(color.hsva)}
-                width={270} 
+                onChange={(c) => setHsva(c.hsva)}
+                width={270}
                 height={270}
             />
-            {/* <ShadeSlider
-                className={sliderClass}
-                hsva={hsva}
-                style={{ width: 210, marginTop: 10 }}
-                onChange={(newShade) => setHsva({ ...hsva, ...newShade })}
-            /> */}
             <input 
                 type="range" 
                 className={`${styles.colorSlider} ${sliderClass}`} 
-                min="0" 
-                max="100" 
-                value={colorV} 
+                min={0}
+                max={100}
+                value={sliderValue} 
                 style={{
-                    background: `linear-gradient(to right, ${value}, #000000)`
+                    background: `linear-gradient(to right, ${gradientLeft}, ${gradientRight})`
                 }}
+                onMouseDown={(e) => { e.stopPropagation(); setIsSliding(true); }}
+                onMouseUp={() => setIsSliding(false)}
                 onChange={(e) => {
-                    setColorV(e.target.value);
-                    setHsva({ ...hsva, v: 100 - Number(e.target.value) });
+                    const v = 100 - Number(e.target.value);
+                    setHsva((prev) => ({ ...prev, v }));
                 }}
             />
         </Fragment>

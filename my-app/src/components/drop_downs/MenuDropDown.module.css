@@ -3,7 +3,7 @@
     height: 50px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 15px;  
 }
 
 .cardContainer {
@@ -22,6 +22,7 @@
     border-radius: 15px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
     background-color: #cee5a3;
+    z-index: 1;
 }
 
 .iconContainer {

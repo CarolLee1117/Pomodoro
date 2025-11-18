@@ -1,5 +1,6 @@
 .colorSlider {
     -webkit-appearance: none; /* 移除預設樣式 */
+    touch-action: none; /* 觸控裝置避免手勢干擾 */
     width: 280px;
     height: 45px;
     border-radius: 6px;
@@ -21,3 +22,4 @@
     cursor: pointer;
     margin-top: 0px; /* 調整垂直對齊 */
 }
+

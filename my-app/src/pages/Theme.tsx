@@ -27,22 +27,20 @@ function Theme(){
     const [loaded, setLoaded] = useState(false);
     const [reload, setReload] = useState(0);
     const [palette, setPalette] = useState(DEFAULT_COLORS);
-    const [hexColor, setHexColor] = useState("#FFFFFF");
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const [hexColor, setHexColor] = useState("#FFFFFF");  // 預設白色最亮
 
-    const selectBlock = (i: number | null) => {
-    setActiveIndex(i);
-    if (i !== null){
-        setHexColor(palette[i].hex.toUpperCase());  // 讓左邊 picker 同步顯示
-    }
+    const handleSelect = (i: number, hex: string) => {
+        setActiveIndex(i);
+        setHexColor(hex.toUpperCase());                 // ← 直接用子元件傳回的顏色
     };
 
-    const applyColor = (i: number, hex: string) =>
-    setPalette(p => p.map((c, idx) => (idx === i ? { ...c, hex } : c)));
-
-    // 當使用者拖動 color picker，更新目前選到的色塊
     useEffect(() => {
-        if (activeIndex !== null) applyColor(activeIndex, hexColor.toUpperCase());
+        if (activeIndex !== null) {
+            setPalette((prev) =>
+                prev.map((c, idx) => (idx === activeIndex ? { ...c, hex: hexColor.toUpperCase() } : c)),
+            );
+        }
     }, [hexColor, activeIndex]);
 
     // 提供給範例區/整頁使用的 CSS 變數（關鍵！）
@@ -81,6 +79,27 @@ function Theme(){
     useEffect(() => {
         setLoaded(true);
     }, [reload]);
+
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText(hexColor);
+            alert("Copied!");
+        } catch {
+            alert("Copy failed.");
+        }
+    };
+
+    const handleReset = () => {
+        setPalette(DEFAULT_COLORS);
+        setActiveIndex(0);
+        setHexColor(DEFAULT_COLORS[0].hex.toUpperCase());
+    };
+
+    const handleSave = () => {
+        // 之後要接 API 的話，把 palette 傳出去即可
+        console.log("save palette", palette);
+        alert("Saved (console)");
+    };
 
     return (
         <div className={styles.container}>
@@ -129,7 +148,7 @@ function Theme(){
                                     color={c.hex}
                                     index={i}
                                     activeIndex={activeIndex}
-                                    setActiveIndex={selectBlock}
+                                    onSelect={handleSelect}
                                  />
                              ))}
                         </div>
@@ -138,6 +157,7 @@ function Theme(){
                                 text={palette[activeIndex].usage} 
                                 textClass={styles.usageText}
                             />
+
                         ) : (
                             <Text 
                                 text="Click a color block to view its usage." 

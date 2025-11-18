@@ -5,28 +5,21 @@ interface ColorBlockProps {
     color: string;
     index: number;
     activeIndex: number | null;
-    setActiveIndex: (index: number | null) => void;
+    onSelect: (index: number, hex: string) => void;
+    onDeselect?: () => void;
 }
 
 export default function ColorBlock({
     color,
     index,
     activeIndex,
-    setActiveIndex,
+    onSelect, 
 }: ColorBlockProps) {
     const isActive = activeIndex === index;
 
     const handleClick = (e: MouseEvent<HTMLDivElement>) => {
-    if (isActive) {
-        // 取消選取：先加 returning 動畫，再還原
-        e.currentTarget.classList.add(styles.returning);
-        setTimeout(() => {
-            e.currentTarget.classList.remove(styles.returning);
-        }, 250);
-        setActiveIndex(null);
-    } else {
-        setActiveIndex(index);
-    }
+        if (isActive)  return;
+        onSelect(index, color);     // ← 直接把 hex 帶回父層
     };
 
     return (
