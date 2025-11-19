@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Angkor&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Annapurna+SIL:wght@400;700&display=swap');
+@import "tailwindcss";
 
 .angkor-regular {
     font-family: "Angkor", serif;
@@ -41,11 +42,10 @@
     --c-prompt: #E9F3C8;
 }
 
-* {
+html, body {
     margin: 0;
     padding: 0;
     border: 0;
-    inset: 0;
     box-sizing: border-box;
 }
 

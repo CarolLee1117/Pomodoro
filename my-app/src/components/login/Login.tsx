@@ -6,12 +6,14 @@ interface loginProps {
     name: string;
     pwd: string;
     onchange: (key: string, value: string) => void;
+    onLogin: () => void;
 }
 
 function Login({
     name,
     pwd,
-    onchange
+    onchange,
+    onLogin,
 }: loginProps) {
     return (
         <div className={styles.container}>
@@ -35,7 +37,9 @@ function Login({
                     text="Log in" 
                     textClass={styles.buttonText}
                     buttonClass={styles.button}
+                    onClick={onLogin}
                 />
+
             </div>
         </div>
     );

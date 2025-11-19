@@ -7,8 +7,8 @@ import LoginPage from "../pages/LoginPage";
 function AppRoutes() {
   // 用 useRoutes 定義所有路由表
   const routes = useRoutes([
-    // { path: "/", element: <App /> },
-    { path: "/", element: <LoginPage /> },  // 暫時測試使用
+    { path: "/", element: <App /> },
+    { path: "/login", element: <LoginPage /> },
     { path: "/account", element: <Account /> },
     { path: "/theme", element: <Theme/>}
   ]);
