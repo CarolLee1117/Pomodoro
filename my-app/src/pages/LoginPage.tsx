@@ -3,6 +3,10 @@ import Login from "../components/login/Login";
 // import styles from "./LoginPage.module.css"
 import { hello, login } from "../services/auth";
 import { useNavigate } from "react-router-dom";
+import desk from "../images/desk.jpg";
+import Text from "../components/texts/Text";
+import styles from "./LoginPage.module.css";
+
 
 function LoginPage(): ReactElement {
     const [form, setForm] = useState({
@@ -37,23 +41,38 @@ function LoginPage(): ReactElement {
 
     return (
         <>
-            <Login
-                name={form.name}
-                pwd={form.pwd}
-                onchange={handleChange}
-                onLogin={handleLogin}
-            />
-            <p>{message}</p>
+            <div
+                className={styles.container}
+                style={{
+                    backgroundImage: `url(${desk})`,
+                }}
+            >
+                <div className={styles.left}>
+                    <Text
+                        text="It's a good day to focus."
+                        textClass={styles.topic}
+                    />
+                </div>
+                <div className={styles.right}>
+                    <Login
+                        name={form.name}
+                        pwd={form.pwd}
+                        onchange={handleChange}
+                        onLogin={handleLogin}
+                    />
+                    {/* <p>{message}</p> 若要顯示訊息可以放 Login 下方 */}
+                </div>
+            </div>
             
             {/*RWD test*/}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5">  
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-10">  
                 <button
                     className="border p-5 rounded bg-white"
                     onClick={handleHello}
                 >
                     hello
                 </button>
-            </div>
+            </div> */}
         </>
     );
 }

@@ -23,6 +23,8 @@
 }
 
 .icon > svg {
+  height: 100%;
+  width: 100%;
   color: #788257;
 }
 

@@ -43,7 +43,7 @@ function Theme(){
         }
     }, [hexColor, activeIndex]);
 
-    // 提供給範例區/整頁使用的 CSS 變數（關鍵！）
+    // 提供給範例區/整頁使用的 CSS 變數
     const cssVars: React.CSSProperties = {
         // block_1
         ["--c-icon" as any]: palette[0].hex,

@@ -4,15 +4,15 @@
     justify-content: center;
     padding: 20px;
     height: 100%;
-    width: 380px;
-    background-color: #f6ffd8a3;
+    width: 100%;
+    background-color: #f6ffd8ca;
 }
 
 .column{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .topic {
@@ -20,6 +20,7 @@
     font-size: 60px;
     font-family: var(--font-angkor);
     user-select: none;
+    margin-bottom: 10px;
 }
 
 .promptText {
@@ -35,6 +36,7 @@
     border-radius: 10px;
     background-color: #F6FFD8;
     padding: 10px 20px;
+    width: 450px;
     font-family: "Annapurna SIL", serif;
     /* border: 2px solid transparent; */
     transition: 
@@ -48,7 +50,7 @@
 }
 
 .input:hover {
-    background-color: #78825743;
+    background-color: #d4dfaed7;
 }
 
 .input::selection {    /* 反白 */
@@ -57,12 +59,13 @@
 
 
 .buttonText {
-    font-size: 30px;
+    font-size: 40px;
     user-select: none;
 }
 
 .button {
-    height: 55px;
-    width: 160px;
+    height: 70px;
+    width: 200px;
     border-radius: 30px;
+    margin-top: 30px;
 }

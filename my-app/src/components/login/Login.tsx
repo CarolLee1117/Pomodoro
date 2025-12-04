@@ -34,7 +34,7 @@ function Login({
                     onChange={(e) => onchange("pwd", e.target.value)}
                 />
                 <TextButton 
-                    text="Log in" 
+                    text="Okay !" 
                     textClass={styles.buttonText}
                     buttonClass={styles.button}
                     onClick={onLogin}

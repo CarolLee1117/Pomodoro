@@ -53,6 +53,11 @@
     color: var(--c-icon);
 }
 
+.icon > svg {
+    height: 100%;
+    width: 100%;
+}
+
 .iconText {
     color: var(--c-dropdown-text);
 }
