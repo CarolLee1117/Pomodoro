@@ -56,7 +56,7 @@ function MenuDropDown({
             <div>
                 <IconButton 
                     icon={SignOutIcon} 
-                    onClick={() => handleNavigation("/sign_out")}
+                    onClick={() => handleNavigation("/login")}
                     text="Sign Out"
                 />
             </div>

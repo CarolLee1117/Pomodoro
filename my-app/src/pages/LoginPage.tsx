@@ -1,11 +1,12 @@
 import { useState, type ReactElement } from "react";
-import Login from "../components/login/Login";
-// import styles from "./LoginPage.module.css"
-import { hello, login } from "../services/auth";
 import { useNavigate } from "react-router-dom";
+import { login } from "../services/auth";
+import { useEffect } from "react";
+import Login from "../components/login/Login";
 import desk from "../images/desk.jpg";
 import Text from "../components/texts/Text";
 import styles from "./LoginPage.module.css";
+import CoveredFadeIn from "../components/animate/CoveredFadeIn/CoveredFadeIn";
 
 
 function LoginPage(): ReactElement {
@@ -13,7 +14,7 @@ function LoginPage(): ReactElement {
         name: "",
         pwd: "",
     });
-
+    const [loaded, setLoaded] = useState(false);
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
 
@@ -21,23 +22,22 @@ function LoginPage(): ReactElement {
         setForm(prev => ({ ...prev, [key]: value }));
     };
 
+    useEffect(() => {
+            setLoaded(true);
+        }, []);
+
     const handleLogin = async () => {
         try {
             setMessage("");
             const result = await login(form.name, form.pwd);
             // Login Success
-            alert(result.message);
+            // alert(result.message);
             navigate("/")
             setMessage(result.message);
         } catch (err: any) {
             setMessage(err.response.data.message || "Login failed");
         }
     };
-
-    const handleHello = async () => {
-        const result = await hello();
-        alert(result.data.message);
-    }
 
     return (
         <>
@@ -57,24 +57,25 @@ function LoginPage(): ReactElement {
                     <Login
                         name={form.name}
                         pwd={form.pwd}
+                        message={message}
                         onchange={handleChange}
                         onLogin={handleLogin}
                     />
-                    {/* <p>{message}</p> 若要顯示訊息可以放 Login 下方 */}
                 </div>
             </div>
             
             {/*RWD test*/}
-            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-10">  
-                <button
-                    className="border p-5 rounded bg-white"
-                    onClick={handleHello}
-                >
-                    hello
-                </button>
-            </div> */}
+            <CoveredFadeIn isLoaded={loaded} />
         </>
     );
 }
 
 export default LoginPage;
+{/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-10">  
+    <button
+        className="border p-5 rounded bg-white"
+        onClick={handleHello}
+    >
+        hello
+    </button>
+</div> */}

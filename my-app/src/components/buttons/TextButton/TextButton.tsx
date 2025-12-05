@@ -2,6 +2,7 @@ import styles from "./TextButton.module.css";
 
 interface textButtonProps {
     text: string;
+    type?: "button" | "submit" | "reset";
     buttonClass?: string;
     textClass?: string;
     onClick?: () => void;
@@ -11,10 +12,12 @@ function TextButton ({
     text,
     buttonClass="",
     textClass="",
+    type,
     onClick
 }: textButtonProps) {
     return (
-        <button 
+        <button
+            type={type ?? "button"}
             className={`${styles.button} ${buttonClass}`}
             onClick={onClick}
         >
