@@ -1,4 +1,4 @@
-import styles from "./Login.module.css";
+import styles from "./LoginForm.module.css";
 import TextButton from "../buttons/TextButton/TextButton";
 import Text from "../texts/Text";
 import type { FormEvent } from "react";
@@ -9,17 +9,21 @@ interface LoginProps {
     message?: string;
     onchange: (key: string, value: string) => void;
     onLogin: () => void;
+    disabled?: boolean;
 }
 
-function Login({
+function LoginForm({
     name,
     pwd,
     message,
     onchange,
     onLogin,
+    disabled = false,
 }: LoginProps) {
+
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (disabled) return;
         onLogin();
     };
 
@@ -39,6 +43,7 @@ function Login({
                     <input
                         className={styles.input}
                         value={name}
+                        disabled={disabled}
                         onChange={(e) => onchange("name", e.target.value)}
                     />
                     <Text 
@@ -49,6 +54,7 @@ function Login({
                         className={styles.input}
                         type="password"
                         value={pwd}
+                        disabled={disabled}
                         onChange={(e) => onchange("pwd", e.target.value)}
                     />
                 </div>
@@ -61,14 +67,15 @@ function Login({
                 )}
 
                 <TextButton
-                    text="Okay !"
+                    text={disabled ? "Loading in..." : "Okay !"}
                     textClass={styles.buttonText}
                     buttonClass={styles.button}
                     type="submit"
+                    disabled={disabled}
                 />
             </div>
         </form>
     );
 }
 
-export default Login;
+export default LoginForm;

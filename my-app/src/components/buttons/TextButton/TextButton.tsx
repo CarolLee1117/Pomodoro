@@ -6,6 +6,7 @@ interface textButtonProps {
     buttonClass?: string;
     textClass?: string;
     onClick?: () => void;
+    disabled?: boolean;
 }
 
 function TextButton ({
@@ -13,13 +14,15 @@ function TextButton ({
     buttonClass="",
     textClass="",
     type,
-    onClick
+    onClick,
+    disabled=false,
 }: textButtonProps) {
     return (
         <button
             type={type ?? "button"}
             className={`${styles.button} ${buttonClass}`}
             onClick={onClick}
+            disabled={disabled}
         >
             <p className={`${styles.label} ${textClass}`}>{text}</p>
         </button>

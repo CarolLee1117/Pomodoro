@@ -1,43 +1,33 @@
-import { useState, type ReactElement } from "react";
-import { useNavigate } from "react-router-dom";
-import { login } from "../services/auth";
+import { useCallback, useState, type ReactElement } from "react";
 import { useEffect } from "react";
-import Login from "../components/login/Login";
+import { useLogin } from "../hooks/useLogin";
 import desk from "../images/desk.jpg";
 import Text from "../components/texts/Text";
-import styles from "./LoginPage.module.css";
+import styles from "./AuthPage.module.css";
 import CoveredFadeIn from "../components/animate/CoveredFadeIn/CoveredFadeIn";
+import LoginForm from "../components/auth/LoginForm";
 
 
-function LoginPage(): ReactElement {
+function AuthPage(): ReactElement {
     const [form, setForm] = useState({
         name: "",
         pwd: "",
     });
     const [loaded, setLoaded] = useState(false);
-    const [message, setMessage] = useState("");
-    const navigate = useNavigate();
 
-    const handleChange = (key: string, value: string) => {
+    const { message, isLoading, submitLogin } = useLogin();
+
+    const handleChange = useCallback((key: string, value: string) => {
         setForm(prev => ({ ...prev, [key]: value }));
-    };
+    }, []);
+
+    const handleLogin = useCallback(() => {
+        submitLogin(form.name, form.pwd);
+    }, [submitLogin, form.name, form.pwd]);
 
     useEffect(() => {
-            setLoaded(true);
-        }, []);
-
-    const handleLogin = async () => {
-        try {
-            setMessage("");
-            const result = await login(form.name, form.pwd);
-            // Login Success
-            // alert(result.message);
-            navigate("/")
-            setMessage(result.message);
-        } catch (err: any) {
-            setMessage(err.response.data.message || "Login failed");
-        }
-    };
+        setLoaded(true);
+    }, []);
 
     return (
         <>
@@ -54,7 +44,7 @@ function LoginPage(): ReactElement {
                     />
                 </div>
                 <div className={styles.right}>
-                    <Login
+                    <LoginForm
                         name={form.name}
                         pwd={form.pwd}
                         message={message}
@@ -63,19 +53,9 @@ function LoginPage(): ReactElement {
                     />
                 </div>
             </div>
-            
-            {/*RWD test*/}
             <CoveredFadeIn isLoaded={loaded} />
         </>
     );
 }
 
-export default LoginPage;
-{/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-10">  
-    <button
-        className="border p-5 rounded bg-white"
-        onClick={handleHello}
-    >
-        hello
-    </button>
-</div> */}
+export default AuthPage;
