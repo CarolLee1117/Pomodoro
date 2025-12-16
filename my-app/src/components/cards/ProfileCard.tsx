@@ -1,4 +1,4 @@
-import styles from "./ProfileCard.module.css"
+import styles from "./ProfileCard.module.css";
 
 interface profileCardProps {
     name: string;
