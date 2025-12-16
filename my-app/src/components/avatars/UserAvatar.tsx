@@ -23,7 +23,7 @@ function UserAvatar({
                 alignSelf: `${align}`
             }}
         >
-            <img src={url}/>
+            <img src={url} alt="avatar"/>
         </div>
     ); 
 }

@@ -7,6 +7,7 @@ import Text from "../components/texts/Text";
 import MenuDropDown from "../components/drop_downs/MenuDropDown";
 import CoveredFadeIn from "../components/animate/CoveredFadeIn/CoveredFadeIn";
 import { useFadeIn } from "../hooks/useFadeIn";
+import shika from "../images/shika.jpg";
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
                 <MenuDropDown onNavigate={fadeOut}/>
             </div>
             <div className={styles.body}>
-                <UserAvatar url="https://i.pinimg.com/1200x/df/99/2d/df992d4f3d0c75af24a3dd64b2306107.jpg" />
+                <UserAvatar url={shika}/>
                 <Text text="Welcome, AwunaLulu (●'◡'●)" textClass={styles.text}/>
                 <TextButton 
                     text="Start !" 
