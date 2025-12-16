@@ -6,7 +6,7 @@ interface profileCardProps {
     email: string;
     birthday: string;
     editable: boolean;
-    onChange: (key: string, value: string) => void;
+    onChange: (key: "name" | "pwd" | "email" | "birthday", value: string) => void;
 }
 
 function ProfileCard({

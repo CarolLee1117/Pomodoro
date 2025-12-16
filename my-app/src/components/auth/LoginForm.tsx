@@ -7,7 +7,7 @@ interface LoginProps {
     name: string;
     pwd: string;
     message?: string;
-    onchange: (key: string, value: string) => void;
+    onChange: (key: "name" | "pwd", value: string) => void;
     onLogin: () => void;
     disabled?: boolean;
 }
@@ -16,7 +16,7 @@ function LoginForm({
     name,
     pwd,
     message,
-    onchange,
+    onChange,
     onLogin,
     disabled = false,
 }: LoginProps) {
@@ -44,7 +44,7 @@ function LoginForm({
                         className={styles.input}
                         value={name}
                         disabled={disabled}
-                        onChange={(e) => onchange("name", e.target.value)}
+                        onChange={(e) => onChange("name", e.target.value)}
                     />
                     <Text 
                         text="Password" 
@@ -55,7 +55,7 @@ function LoginForm({
                         type="password"
                         value={pwd}
                         disabled={disabled}
-                        onChange={(e) => onchange("pwd", e.target.value)}
+                        onChange={(e) => onChange("pwd", e.target.value)}
                     />
                 </div>
 

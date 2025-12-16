@@ -6,22 +6,16 @@ import GroupIcon from "../components/icons/icons/GroupIcon";
 import Text from "../components/texts/Text";
 import MenuDropDown from "../components/drop_downs/MenuDropDown";
 import CoveredFadeIn from "../components/animate/CoveredFadeIn/CoveredFadeIn";
-import { useEffect, useState } from "react";
+import { useFadeIn } from "../hooks/useFadeIn";
 
 
 function App() {
-    const [loaded, setLoaded] = useState(false);
-    
-    useEffect(() => {
-        setLoaded(true);
-    }, []);
+    const { loaded, fadeOut } = useFadeIn();
 
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <MenuDropDown onNavigate={() => {
-                    setLoaded(false);
-                }}/>
+                <MenuDropDown onNavigate={fadeOut}/>
             </div>
             <div className={styles.body}>
                 <UserAvatar url="https://i.pinimg.com/1200x/df/99/2d/df992d4f3d0c75af24a3dd64b2306107.jpg" />
