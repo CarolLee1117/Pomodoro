@@ -17,7 +17,7 @@
 ---
 
 ## 資訊架構（Information Architecture, IA）
-![image](https://hackmd.io/_uploads/rJ9fRMeNbl.png)
+<img width="1780" height="679" alt="image" src="https://github.com/user-attachments/assets/0314e67c-09a9-4eba-bf09-d188bd470925" />
 
 本資訊架構圖用於定義 **Pomodoro App** 的頁面層級與資訊組織方式。
 
@@ -32,7 +32,7 @@
 ---
 
 ## 功能地圖（Functional Map）
-![image](https://hackmd.io/_uploads/B1eECGxVWl.png)
+<img width="1157" height="1045" alt="image" src="https://github.com/user-attachments/assets/08bc53af-fc18-4afe-bdd8-90034d94595a" />
 
 本功能地圖用於描述 **Pomodoro App** 各功能模組所涵蓋的系統行為與責任範圍。
 
@@ -77,16 +77,18 @@
     - 偏好設定儲存狀態提示
 
 ## 動作流程（Flow Chart）
-![image](https://hackmd.io/_uploads/S19f-197Zl.png)
+<img width="1300" height="930" alt="image" src="https://github.com/user-attachments/assets/d86ea87e-7e9f-40bf-a5e0-962830b5311c" />
+
 本動作流程圖用於描述 Pomodoro App 番茄鐘的核心計時邏輯與狀態轉換流程，
 包含專注與休息模式的切換、循環判斷，以及使用者中斷操作（暫停、重置、放棄）的處理方式。圖中虛線表示使用者可能於任一計時階段觸發的中斷行為。
 
 ## 畫面流程（UI Flow）
-![image](https://hackmd.io/_uploads/Hkfl4iCQ-l.png)
+<img width="1542" height="784" alt="image" src="https://github.com/user-attachments/assets/1476032f-0bda-401e-97ee-e5f8d11ad844" />
+
 本畫面流程圖用於描述 Pomodoro App 各主要畫面之間的導覽關係。圖中僅呈現畫面層級的切換流程，不包含計時邏輯與內部狀態變化（如暫停、重置、放棄），相關行為已於「動作流程（Flow Chart）」中另行說明。
 
 ## 線稿圖（Layout-focused）
-![image](https://hackmd.io/_uploads/rkwIjfeVWl.png)
+<img width="1165" height="501" alt="image" src="https://github.com/user-attachments/assets/fc2d0542-9ab4-4b75-bc72-c190df40ab77" />
 
 本線稿圖用於呈現主要畫面結構與使用流程。為加快專案進度並維持畫面一致性，沿用既有品牌配色，未刻意退回純灰階線稿。互動細節（如動畫、狀態切換）將於實作階段由元件狀態與邏輯控制。
 
