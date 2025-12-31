@@ -1,19 +1,17 @@
 import { useRoutes } from "react-router-dom";
 import App from "../pages/App";
-import Account from "../pages/Account";
 import Theme from "../pages/Theme";
-import AuthPage from "../pages/AuthPage";
+import Timer from "../pages/Timer";
 
 function AppRoutes() {
   // 用 useRoutes 定義所有路由表
   const routes = useRoutes([
     { path: "/", element: <App /> },
-    { path: "/login", element: <AuthPage /> },
-    { path: "/account", element: <Account /> },
-    { path: "/theme", element: <Theme/>}
+    { path: "/theme", element: <Theme/>},
+    { path: "/Timer", element: <Timer/> }
   ]);
 
   return routes;
 }
 
-export default AppRoutes
+export default AppRoutes;

@@ -34,13 +34,6 @@ function MenuDropDown({
         <div className={styles.card}>
             <div>
                 <IconButton 
-                    icon={AccountIcon} 
-                    onClick={() => handleNavigation("/account")}
-                    text="Account"
-                />
-            </div>
-            <div>
-                <IconButton 
                     icon={ThemeIcon} 
                     onClick={() => handleNavigation("/theme")}
                     text="Theme"
@@ -51,13 +44,6 @@ function MenuDropDown({
                     icon={InsightsIcon} 
                     onClick={() => handleNavigation("/insights")}
                     text="Insights"
-                />
-            </div>
-            <div>
-                <IconButton 
-                    icon={SignOutIcon} 
-                    onClick={() => handleNavigation("/login")}
-                    text="Sign Out"
                 />
             </div>
         </div>

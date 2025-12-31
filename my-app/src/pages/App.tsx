@@ -9,7 +9,7 @@ import CoveredFadeIn from "../components/animate/CoveredFadeIn/CoveredFadeIn";
 import { useFadeIn } from "../hooks/useFadeIn";
 import shika from "../images/shika.jpg";
 
-
+// Hello
 function App() {
     const { loaded, fadeOut } = useFadeIn();
 
