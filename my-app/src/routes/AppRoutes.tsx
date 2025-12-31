@@ -4,11 +4,10 @@ import Theme from "../pages/Theme";
 import Timer from "../pages/Timer";
 
 function AppRoutes() {
-  // 用 useRoutes 定義所有路由表
   const routes = useRoutes([
     { path: "/", element: <App /> },
-    { path: "/theme", element: <Theme/>},
-    { path: "/Timer", element: <Timer/> }
+    { path: "/theme", element: <Theme /> },
+    { path: "/timer", element: <Timer /> },
   ]);
 
   return routes;

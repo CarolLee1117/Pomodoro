@@ -7,11 +7,13 @@ import Text from "../components/texts/Text";
 import MenuDropDown from "../components/drop_downs/MenuDropDown";
 import CoveredFadeIn from "../components/animate/CoveredFadeIn/CoveredFadeIn";
 import { useFadeIn } from "../hooks/useFadeIn";
+import { useNavigate } from "react-router-dom";
 import shika from "../images/shika.jpg";
 
 // Hello
 function App() {
     const { loaded, fadeOut } = useFadeIn();
+    const navigate = useNavigate();
 
     return (
         <div className={styles.container}>
@@ -26,14 +28,8 @@ function App() {
                     buttonClass={styles.mainBtn}
                     textClass={styles.mainBtnText}
                     onClick={() => {
-                        alert("Hello");
+                        navigate("/timer");
                     }}
-                />
-            </div>
-            <div className={styles.footer}>
-                <FunctionalIcon 
-                    icon={GroupIcon}
-                    onClick={() => {alert("about us")}}
                 />
             </div>
             <CoveredFadeIn isLoaded={loaded} />
