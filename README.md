@@ -88,7 +88,8 @@
 本畫面流程圖用於描述 Pomodoro App 各主要畫面之間的導覽關係。圖中僅呈現畫面層級的切換流程，不包含計時邏輯與內部狀態變化（如暫停、重置、放棄），相關行為已於「動作流程（Flow Chart）」中另行說明。
 
 ## 線稿圖（Layout-focused）
-<img width="1165" height="501" alt="image" src="https://github.com/user-attachments/assets/fc2d0542-9ab4-4b75-bc72-c190df40ab77" />
+<img width="1192" height="505" alt="image" src="https://github.com/user-attachments/assets/7e988adf-a424-4c08-a069-b00ecc4884c6" />
+
 
 本線稿圖用於呈現主要畫面結構與使用流程。為加快專案進度並維持畫面一致性，沿用既有品牌配色，未刻意退回純灰階線稿。互動細節（如動畫、狀態切換）將於實作階段由元件狀態與邏輯控制。
 
