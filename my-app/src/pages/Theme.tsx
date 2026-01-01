@@ -2,18 +2,18 @@ import styles from "./Theme.module.css";
 import MenuDropDown from "../components/drop_downs/MenuDropDown";
 import FunctionalIcon from "../components/icons/FunctionalIcon";
 import HomeIcon from "../components/icons/icons/HomeIcon";
-import CoveredFadeIn from "../components/animate/CoveredFadeIn/CoveredFadeIn";
 import TextButton from "../components/buttons/TextButton/TextButton";
 import Text from "../components/texts/Text";
 import Sample from "../components/sample/Sample";
 import WheelSet from "../components/color_picker/WheelSet";
 import ColorBlock from "../components/color_picker/ColorBlock";
 
-import { useFadeIn } from "../hooks/useFadeIn";
 import { useThemePalette } from "../hooks/useThemePalette";
+import { useTransition } from "../providers/TransitionProvider";
 
 function Theme() {
-    const { loaded, fadeOut, fadeIn } = useFadeIn();
+
+    const { go } = useTransition();
 
     const {
         palette,
@@ -30,18 +30,23 @@ function Theme() {
         activeIndex !== null ? palette[activeIndex].usage : "Click a color block to view its usage.";
 
     const handleSave = () => {
-        console.log("save palette", palette);
-        alert("Saved (console)");
+        const vars: Record<string, string> = {};
+        palette.forEach((c) => {
+            vars[`--${c.key}`] = c.hex;
+        });
+
+        localStorage.setItem("theme:vars", JSON.stringify(vars));
+
+        Object.entries(vars).forEach(([k, v]) => {
+            document.documentElement.style.setProperty(k, v);
+        });
     };
 
     return (
         <div className={styles.container}>
         <div className={styles.header}>
-            <MenuDropDown
-            onNavigate={fadeOut}
-            afterNavigate={fadeIn}
-            />
-            <FunctionalIcon icon={HomeIcon} to="/" />
+            <MenuDropDown/>
+            <FunctionalIcon icon={HomeIcon} onClick={() => go("/")} />
         </div>
 
         <div className={styles.content}>
@@ -113,8 +118,6 @@ function Theme() {
             />
             </div>
         </div>
-
-        <CoveredFadeIn isLoaded={loaded} />
         </div>
     );
 }

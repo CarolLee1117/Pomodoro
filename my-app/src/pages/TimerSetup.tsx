@@ -1,3 +1,13 @@
+import styles from "./TimerSetup.module.css";
+import MenuDropDown from "../components/drop_downs/MenuDropDown";
+import FunctionalIcon from "../components/icons/FunctionalIcon";
+import HomeIcon from "../components/icons/icons/HomeIcon";
+import TextButton from "../components/buttons/TextButton/TextButton";
+import Text from "../components/texts/Text";
+import { useState } from "react";
+import { useTransition } from "../providers/TransitionProvider";
+
+
 type Props = {
     focusMinutes: number;
     breakMinutes: number;
@@ -9,8 +19,10 @@ type Props = {
     onBack: () => void;
 };
 
+type FieldKey = "focus" | "break" | "cycles";
+
 const clamp = (v: number, min: number, max: number) =>
-  Math.min(max, Math.max(min, v));
+    Math.min(max, Math.max(min, v));
 
 export default function TimerSetup({
     focusMinutes,
@@ -21,50 +33,122 @@ export default function TimerSetup({
     setCycles,
     onStart,
     onBack,
-    }: Props) {
+}: Props) {
+    const { go } = useTransition();
+    const [activeField, setActiveField] = useState<FieldKey>("focus");
+
+    const FIELD = {
+        focus: {
+            label: "Focus Time",
+            min: 1,
+            max: 180,
+            step: 1,
+            unit: "Minutes",
+            value: focusMinutes,
+            setValue: setFocusMinutes,
+        },
+        break: {
+            label: "Break Time",
+            min: 1,
+            max: 60,
+            step: 1,
+            unit: "Minutes",
+            value: breakMinutes,
+            setValue: setBreakMinutes,
+        },
+        cycles: {
+            label: "Cycle Count",
+            min: 1,
+            max: 12,
+            step: 1,
+            unit: "Cycles",
+            value: cycles,
+            setValue: setCycles,
+        },
+    } as const;
+
+    const current = FIELD[activeField];
+
+    const changeBy = (delta: number) => {
+        current.setValue(clamp(current.value + delta, current.min, current.max));
+    };
+
+    const onInputChange = (raw: string) => {
+        if (raw === "") return;
+        const n = Number(raw);
+        if (Number.isNaN(n)) return;
+        current.setValue(clamp(n, current.min, current.max));
+    };
+
     return (
-        <div style={{ padding: 24 }}>
-        <h2>Timer Setup</h2>
-
-        <div style={{ display: "grid", gap: 12, maxWidth: 360 }}>
-            <label>
-            Focus (min):
-            <input
-                type="number"
-                value={focusMinutes}
-                onChange={(e) =>
-                setFocusMinutes(clamp(Number(e.target.value), 1, 180))
-                }
-            />
-            </label>
-
-            <label>
-            Break (min):
-            <input
-                type="number"
-                value={breakMinutes}
-                onChange={(e) =>
-                setBreakMinutes(clamp(Number(e.target.value), 1, 60))
-                }
-            />
-            </label>
-
-            <label>
-            Cycles:
-            <input
-                type="number"
-                value={cycles}
-                onChange={(e) =>
-                setCycles(clamp(Number(e.target.value), 1, 12))
-                }
-            />
-            </label>
-
-            <div style={{ display: "flex", gap: 8 }}>
-            <button onClick={onBack}>Back</button>
-            <button onClick={onStart}>Start</button>
-            </div>
+        <div className={styles.container}>
+        <div className={styles.header}>
+            <MenuDropDown/>
+            <FunctionalIcon icon={HomeIcon} onClick={() => go("/")} />
         </div>
+
+        <div className={styles.content}>
+            <div className={styles.column}>
+            <Text text="Timer Setup" textClass={styles.topicText} />
+
+            <div className={styles.row}>
+                <TextButton
+                text="Focus Time"
+                buttonClass={styles.fieldTab}
+                textClass={
+                    activeField === "focus" ? styles.activeField : styles.inactiveField
+                }
+                onClick={() => setActiveField("focus")}
+                />
+                <TextButton
+                text="Break Time"
+                buttonClass={styles.fieldTab}
+                textClass={
+                    activeField === "break" ? styles.activeField : styles.inactiveField
+                }
+                onClick={() => setActiveField("break")}
+                />
+                <TextButton
+                text="Cycle Count"
+                buttonClass={styles.fieldTab}
+                textClass={
+                    activeField === "cycles" ? styles.activeField : styles.inactiveField
+                }
+                onClick={() => setActiveField("cycles")}
+                />
+            </div>
+
+            <div className={styles.row}>
+                <TextButton
+                text="-"
+                textClass={styles.controlBtn}
+                onClick={() => changeBy(-current.step)}
+            />
+
+            <div className={styles.valueBox}>
+                <input
+                    className={styles.numberInput}
+                    type="number"
+                    value={current.value}
+                    min={current.min}
+                    max={current.max}
+                    step={current.step}
+                    onChange={(e) => onInputChange(e.target.value)}
+                />
+                <Text text={current.unit} textClass={styles.unitText} />
+            </div>
+                <TextButton
+                    text="+"
+                    textClass={styles.controlBtn}
+                    onClick={() => changeBy(+current.step)}
+                />
+                    </div>
+                        <div className={styles.footerRow}>
+                            <TextButton text="Back" onClick={onBack} />
+                            <TextButton text="Start" onClick={onStart} />
+                        </div>
+                    </div>
+            </div>
         </div>
     );
 }

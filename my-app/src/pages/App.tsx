@@ -1,24 +1,18 @@
 import TextButton from "../components/buttons/TextButton/TextButton";
 import UserAvatar from "../components/avatars/UserAvatar";
 import styles from "./App.module.css";
-import FunctionalIcon from "../components/icons/FunctionalIcon";
-import GroupIcon from "../components/icons/icons/GroupIcon";
 import Text from "../components/texts/Text";
 import MenuDropDown from "../components/drop_downs/MenuDropDown";
-import CoveredFadeIn from "../components/animate/CoveredFadeIn/CoveredFadeIn";
-import { useFadeIn } from "../hooks/useFadeIn";
-import { useNavigate } from "react-router-dom";
+import { useTransition } from "../providers/TransitionProvider";
 import shika from "../images/shika.jpg";
 
-// Hello
 function App() {
-    const { loaded, fadeOut } = useFadeIn();
-    const navigate = useNavigate();
+    const { go } = useTransition();
 
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <MenuDropDown onNavigate={fadeOut}/>
+                <MenuDropDown/>
             </div>
             <div className={styles.body}>
                 <UserAvatar url={shika}/>
@@ -27,12 +21,9 @@ function App() {
                     text="Start !" 
                     buttonClass={styles.mainBtn}
                     textClass={styles.mainBtnText}
-                    onClick={() => {
-                        navigate("/timer");
-                    }}
+                    onClick={() => go("/timer")}
                 />
             </div>
-            <CoveredFadeIn isLoaded={loaded} />
         </div>
     );
 }

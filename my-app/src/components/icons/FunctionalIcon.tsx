@@ -1,6 +1,6 @@
 import styles from "./FunctionalIcon.module.css";
 import type { Icon } from "./icons/BaseIcon";
-import { Link } from "react-router-dom";
+import { useTransition } from "../../providers/TransitionProvider"; 
 
 interface functionalIconProps {
     icon: Icon;
@@ -15,24 +15,20 @@ function FunctionalIcon ({
     iconClass="",
     onClick
 }: functionalIconProps) {
+    const { go } = useTransition();
     const className = `${styles.icon} ${iconClass}`;
 
-    if (to) {
-        return (
-            <Link
-                to={to}
-                onClick={onClick}
-                className={className}
-            >
-                <Icon/>
-            </Link>
-        );
-    }
+    const handleClick = () => {
+        onClick?.();
+        if (to) {
+            go(to);
+        }
+    };
 
     return (
         <button
             type="button"
-            onClick={onClick}
+            onClick={handleClick}
             className={className}
         >
             <Icon/>
