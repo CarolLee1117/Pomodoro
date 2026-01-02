@@ -1,35 +1,29 @@
 .container {
     position: relative;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;  
-}
-
-.cardContainer {
-    position: relative;
-}
-
-.card {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    width: fit-content;
-    height: fit-content;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-    background-color: #cee5a3;
-    z-index: 1;
+    display: inline-flex;
+    align-items: center;
 }
 
 .iconContainer {
     height: 50px;
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
-.card, .icon {
-    margin-left: 20px;
+.cardContainer {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 20px;
+    z-index: 50;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    background-color: #CEE5A3;
+    width: max-content;
 }

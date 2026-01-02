@@ -1,7 +1,10 @@
 import styles from "./TimerSetup.module.css";
 import MenuDropDown from "../components/drop_downs/MenuDropDown";
 import FunctionalIcon from "../components/icons/FunctionalIcon";
+import SquareIconButton from "../components/buttons/SquareIconButton/SquareIconButton";
 import HomeIcon from "../components/icons/icons/HomeIcon";
+import MinusIcon from "../components/icons/icons/MinusIcon";
+import PlusIcon from "../components/icons/icons/PlusIcon";
 import TextButton from "../components/buttons/TextButton/TextButton";
 import Text from "../components/texts/Text";
 import { useState } from "react";
@@ -82,72 +85,74 @@ export default function TimerSetup({
 
     return (
         <div className={styles.container}>
-        <div className={styles.header}>
-            <MenuDropDown/>
-            <FunctionalIcon icon={HomeIcon} onClick={() => go("/")} />
-        </div>
-
-        <div className={styles.content}>
-            <div className={styles.column}>
-            <Text text="Timer Setup" textClass={styles.topicText} />
-
-            <div className={styles.row}>
-                <TextButton
-                text="Focus Time"
-                buttonClass={styles.fieldTab}
-                textClass={
-                    activeField === "focus" ? styles.activeField : styles.inactiveField
-                }
-                onClick={() => setActiveField("focus")}
-                />
-                <TextButton
-                text="Break Time"
-                buttonClass={styles.fieldTab}
-                textClass={
-                    activeField === "break" ? styles.activeField : styles.inactiveField
-                }
-                onClick={() => setActiveField("break")}
-                />
-                <TextButton
-                text="Cycle Count"
-                buttonClass={styles.fieldTab}
-                textClass={
-                    activeField === "cycles" ? styles.activeField : styles.inactiveField
-                }
-                onClick={() => setActiveField("cycles")}
-                />
+            <div className={styles.header}>
+                <MenuDropDown />
+                <FunctionalIcon icon={HomeIcon} onClick={() => go("/")} />
             </div>
 
-            <div className={styles.row}>
-                <TextButton
-                text="-"
-                textClass={styles.controlBtn}
-                onClick={() => changeBy(-current.step)}
-            />
+            <div className={styles.content}>
+                <div className={styles.column}>
+                    <Text text="Timer Setup" textClass={styles.topicText} />
 
-            <div className={styles.valueBox}>
-                <input
-                    className={styles.numberInput}
-                    type="number"
-                    value={current.value}
-                    min={current.min}
-                    max={current.max}
-                    step={current.step}
-                    onChange={(e) => onInputChange(e.target.value)}
-                />
-                <Text text={current.unit} textClass={styles.unitText} />
-            </div>
-                <TextButton
-                    text="+"
-                    textClass={styles.controlBtn}
-                    onClick={() => changeBy(+current.step)}
-                />
+                    <div className={styles.row}>
+                        <TextButton
+                            text="Focus Time"
+                            buttonClass={`${styles.fieldTab} ${activeField === "focus" ? styles.fieldTabActive : ""}`}
+                            textClass={
+                                activeField === "focus" ? styles.activeField : styles.inactiveField
+                            }
+                            onClick={() => setActiveField("focus")}
+                        />
+                        <TextButton
+                            text="Break Time"
+                            buttonClass={`${styles.fieldTab} ${activeField === "break" ? styles.fieldTabActive : ""}`}
+                            textClass={
+                                activeField === "break" ? styles.activeField : styles.inactiveField
+                            }
+                            onClick={() => setActiveField("break")}
+                        />
+                        <TextButton
+                            text="Cycle Count"
+                            buttonClass={`${styles.fieldTab} ${activeField === "cycles" ? styles.fieldTabActive : ""}`}
+                            textClass={
+                                activeField === "cycles" ? styles.activeField : styles.inactiveField
+                            }
+                            onClick={() => setActiveField("cycles")}
+                        />
                     </div>
-                        <div className={styles.footerRow}>
-                            <TextButton text="Back" onClick={onBack} />
-                            <TextButton text="Start" onClick={onStart} />
+
+                    <div className={styles.row}>
+                        <SquareIconButton
+                            icon={MinusIcon}
+                            size={80}
+                            padding={5}
+                            buttonClass={styles.controlBtn}
+                            onClick={() => changeBy(-current.step)}
+                        />
+
+                        <div className={styles.valueBox}>
+                            <input
+                                className={styles.numberInput}
+                                type="number"
+                                value={current.value}
+                                onChange={(e) => onInputChange(e.target.value)}
+                            />
                         </div>
+                        <SquareIconButton
+                            icon={PlusIcon}
+                            size={80}
+                            padding={5}
+                            buttonClass={styles.controlBtn}
+                            onClick={() => changeBy(+current.step)}
+                        />
                     </div>
+                    <Text text={current.unit} textClass={styles.unitText} />
+                </div>
+
+                <div className={styles.footerRow}>
+                    <TextButton text="Back" buttonClass={styles.backBtn} textClass={styles.backText} onClick={onBack} />
+                    <TextButton text="Start" buttonClass={styles.startBtn} onClick={onStart} />
+                </div>
             </div>
         </div>
     );

@@ -15,7 +15,7 @@
     height: min-content;
     justify-content: space-between;
     padding: 2px;
-    top: 0; 
+    top: 0;
     left: 0;
     width: 100%;
 }
@@ -28,7 +28,7 @@
     height: 750px;
     width: min-content;
     justify-content: flex-end;
-    row-gap: 25px;  
+    row-gap: 25px;
 }
 
 .row {
@@ -154,18 +154,18 @@
     gap: 20px;
 }
 
-.resetBtn { 
+.resetBtn {
     width: 200px;
     height: 80px;
     align-items: center
 }
 
-.saveBtn  { 
+.saveBtn {
     width: 170px;
     height: 80px;
     align-items: center
 }
 
-.mainBtnText { 
+.mainBtnText {
     font-size: 40px;
 }

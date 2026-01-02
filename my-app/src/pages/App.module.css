@@ -14,7 +14,7 @@
     height: min-content;
     justify-content: space-between;
     padding: 2px;
-    top: 0; 
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
@@ -28,20 +28,15 @@
     flex-direction: column;
 }
 
-.mainBtnText {
-    font-size: 50px;
-}
-
 .mainBtn {
     margin-top: 40px;
-    width: 250px;
-    height: 90px;
-    border-radius: 50px;
+    width: 170px;
+    height: 70px;
+    border-radius: 10px;
 }
 
 .text {
     font-size: 28px;
     color: #788257;
-    margin-top: 12px; /* 取代 padding-top */
-
+    margin-top: 12px;
 }

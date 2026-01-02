@@ -16,11 +16,10 @@ function App() {
             </div>
             <div className={styles.body}>
                 <UserAvatar url={shika}/>
-                <Text text="Welcome, AwunaLulu (●'◡'●)" textClass={styles.text}/>
+                <Text text="Welcome, Luna (●'◡'●)" textClass={styles.text}/>
                 <TextButton 
-                    text="Start !" 
+                    text="Start" 
                     buttonClass={styles.mainBtn}
-                    textClass={styles.mainBtnText}
                     onClick={() => go("/timer")}
                 />
             </div>

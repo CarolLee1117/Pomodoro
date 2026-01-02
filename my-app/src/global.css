@@ -15,8 +15,6 @@
 }
 
 :root {
-    --font-angkor: "Angkor", serif;
-    /* --font-angkor: "Annapurna", serif; */
     --font-annapurna: "Annapurna SIL", serif;
 
     --c-icon: #788257;
@@ -27,7 +25,7 @@
     --c-dropdown-hover-bg: #BBD26E;
 
     --c-secondary-text: #57825B;
-    --c-button-hover-text: #57825B;
+    --c-button-hover-text: #DAF1C4;
 
     --c-button-hover-bg: #A8CD98;
 
@@ -57,4 +55,21 @@ body {
 .w-color-wheel-pointer {
     width: min-content;
     height: min-content;
+}
+
+/* =========================
+   Cross-browser fixes
+   ========================= */
+
+/* Remove number input spinner */
+/* Chrome, Edge, Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

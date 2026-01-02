@@ -1,14 +1,14 @@
 import styles from "./MenuDropDown.module.css";
 import FunctionalIcon from "../icons/FunctionalIcon";
 import MenuIcon from "../icons/icons/MenuIcon";
-import IconButton from "../buttons/IconButtton/IconButton";
+import IconButton from "../buttons/IconButton/IconButton";
 import ThemeIcon from "../icons/icons/ThemeIcon";
 import InsightsIcon from "../icons/icons/InsightsIcon";
 import { useState } from "react";
 import { useTransition } from "../../providers/TransitionProvider";
 
 
-function MenuDropDown(){
+function MenuDropDown() {
     const { go } = useTransition();
     const [display, setDisplay] = useState(false);
 
@@ -22,6 +22,8 @@ function MenuDropDown(){
             <div>
                 <IconButton 
                     icon={ThemeIcon} 
+                    iconClass={styles.themeIcon}
+                    iconSize={36}
                     onClick={() => handleNavigation("/theme")}
                     text="Theme"
                 />
@@ -29,6 +31,8 @@ function MenuDropDown(){
             <div>
                 <IconButton 
                     icon={InsightsIcon} 
+                    iconClass={styles.insightsIcon}
+                    iconSize={36}
                     onClick={() => handleNavigation("/insights")}
                     text="Insights"
                 />
@@ -36,20 +40,20 @@ function MenuDropDown(){
         </div>
     );
 
-    return (  
+    return (
         <div className={styles.container}>
             <div className={styles.iconContainer}>
-                <FunctionalIcon 
-                    icon={MenuIcon} 
+                <FunctionalIcon
+                    icon={MenuIcon}
                     iconClass={styles.icon}
-                    onClick={() => {setDisplay((curr) => !curr)}}
+                    onClick={() => { setDisplay((curr) => !curr) }}
                 />
             </div>
             <div className={styles.cardContainer}>
-                {display && <Card />}  
+                {display && <Card />}
             </div>
         </div>
-        
+
     )
 }
 

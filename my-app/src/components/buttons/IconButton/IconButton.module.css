@@ -1,20 +1,20 @@
 .button .iconContainer,
 .button .iconText {
-  color: inherit;
+    color: inherit;
 }
 
 .button {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    border-radius: 15px;
+    border-radius: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 12px;
     padding-right: 20px;
-    width: 300px;
+    width: 200px;
     font-size: 35px;
-    font-family: var(--font-angkor);
+    font-family: var(--font-annapurna);
     color: var(--c-icon);
     background-color: transparent;
     position: relative;
@@ -28,30 +28,30 @@
     background-color: var(--c-button);
 }
 
-.iconContainer > svg {
-    height: 90%;
-    width: auto;
-}
-
-/* 只作用在 IconButton 包的 link */
 .iconButtonLink {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 .iconButtonLink:hover,
 .iconButtonLink:focus,
 .iconButtonLink:visited {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+.text {
+    color: inherit;
 }
 
 .iconContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
 }
 
-.text { 
-  color: inherit; 
+.iconContainer>svg {
+    width: 100%;
+    height: 100%;
 }

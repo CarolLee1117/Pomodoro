@@ -30,6 +30,11 @@ export default function TimerRunning({
     const mm = String(Math.floor(secondsLeft / 60)).padStart(2, "0");
     const ss = String(secondsLeft % 60).padStart(2, "0");
 
+    const totalSeconds = mode === "focus" ? focusMinutes * 60 : breakMinutes * 60;
+    const progress = totalSeconds > 0 ? 1 - secondsLeft / totalSeconds : 1;
+    const pct = Math.min(100, Math.max(0, Math.round(progress * 100)));
+
+
     useEffect(() => {
         if (isPaused) return;
         if (secondsLeft <= 0) return;
@@ -70,29 +75,43 @@ export default function TimerRunning({
 
     return (
         <div className={styles.container}>
-        <div className={styles.content}>
-            <div className={styles.column}>
-            <Text
-                text={`${currentCycle} / ${cycles}`}
-                textClass={styles.cycleText}
-            />
-            <Text
-                text={mode === "focus" ? "Focus" : "Break"}
-                textClass={styles.stateText}
-            />
-            <Text text={`${mm}:${ss}`} textClass={styles.leftTimeText} />
-            <Text text="50% completed" textClass={styles.completedText} />
+            <div className={styles.card}>
+                <Text text={`Cycle ${currentCycle}/${cycles}`} textClass={styles.cycleText} />
+
+                <div className={styles.pill}>
+                <Text text={mode === "focus" ? "Focus" : "Break"} textClass={styles.pillText} />
+                </div>
+
+                <Text text={`${mm} : ${ss}`} textClass={styles.timeText} />
+
+                <div className={styles.progressWrap}>
+                <div className={styles.progressBar} style={{ width: `${pct}%` }} />
+                </div>
+
+                <Text text={`${pct}% completed`} textClass={styles.completedText} />
             </div>
 
-            <div className={styles.footerRow}>
-            <TextButton
+            <div className={styles.buttonsRow}>
+                <TextButton
                 text={isPaused ? "Resume" : "Pause"}
+                buttonClass={styles.pauseBtn}
+                textClass={styles.btnText}
                 onClick={() => setIsPaused((p) => !p)}
-            />
-            <TextButton text="Reset" onClick={onReset} />
-            <TextButton text="Abort" onClick={onAbort} />
+                />
+                <TextButton
+                text="Reset"
+                buttonClass={styles.resetBtn}
+                textClass={styles.btnTextDark}
+                onClick={onReset}
+                />
+                <TextButton
+                text="Abort"
+                buttonClass={styles.abortBtn}
+                textClass={styles.btnText}
+                onClick={onAbort}
+                />
             </div>
         </div>
-        </div>
+
     );
 }

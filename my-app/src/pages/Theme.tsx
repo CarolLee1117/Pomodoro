@@ -8,6 +8,7 @@ import Sample from "../components/sample/Sample";
 import WheelSet from "../components/color_picker/WheelSet";
 import ColorBlock from "../components/color_picker/ColorBlock";
 
+import { THEME_TOKEN_KEYS } from "../hooks/useThemePalette";
 import { useThemePalette } from "../hooks/useThemePalette";
 import { useTransition } from "../providers/TransitionProvider";
 
@@ -31,15 +32,22 @@ function Theme() {
 
     const handleSave = () => {
         const vars: Record<string, string> = {};
-        palette.forEach((c) => {
-            vars[`--${c.key}`] = c.hex;
+        Object.entries(cssVars).forEach(([k, v]) => {
+            if (typeof v === "string") vars[k] = v;
         });
 
         localStorage.setItem("theme:vars", JSON.stringify(vars));
-
         Object.entries(vars).forEach(([k, v]) => {
             document.documentElement.style.setProperty(k, v);
         });
+    };
+
+    const handleReset = () => {
+        localStorage.removeItem("theme:vars");
+        THEME_TOKEN_KEYS.forEach((k) => {
+            document.documentElement.style.removeProperty(k);
+        });
+        reset();
     };
 
     return (
@@ -98,7 +106,7 @@ function Theme() {
                 />
 
                 <div className={styles.sampleScope} style={cssVars}>
-                <Sample />
+                    <Sample />
                 </div>
             </div>
             </div>
@@ -108,7 +116,7 @@ function Theme() {
                 text="Reset"
                 buttonClass={styles.resetBtn}
                 textClass={styles.mainBtnText}
-                onClick={reset}
+                onClick={handleReset}
             />
             <TextButton
                 text="Save"
