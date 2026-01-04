@@ -1,12 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Angkor&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Annapurna+SIL:wght@400;700&display=swap');
 @import "tailwindcss";
 
-.angkor-regular {
-    font-family: "Angkor", serif;
-    font-weight: 400;
-    font-style: normal;
-}
 
 .annapurna-sil-regular {
     font-family: "Annapurna SIL", serif;
@@ -15,32 +9,39 @@
 }
 
 :root {
+
     --font-annapurna: "Annapurna SIL", serif;
 
-    --c-icon: #788257;
-    --c-main-text: #788257;
-    --c-dropdown-text: #788257;
+    /* base */
+    --c-icon: #788257;              /* block_1 */
+    --c-text: #788257;              /* block_1 */
+    --c-bg: #DAF1C4;                /* block_3 */
+    --c-card: #F6FFD8;              /* block_7 */
+    --c-surface: #E9F3C8;           /* block_6 */
+    --c-dropdown: #CEE5A3;          /* block_4 */
 
-    --c-button: #BBD26E;
-    --c-dropdown-hover-bg: #BBD26E;
+    /* button 1 */
+    --c-btn-bg: #BBD26E;            /* block_5 */
+    --c-btn-hover-bg: #57825B;      /* block_2 */
+    --c-btn-text: #F6FFD8;          /* block_7 */
+    --c-btn-hover-text: #DAF1C4;    /* block_3 */
 
-    --c-secondary-text: #57825B;
-    --c-button-hover-text: #DAF1C4;
+    /* button 2 */
+    --c-btn2-bg: #F6FFD8;           /* block_7 */
+    --c-btn2-text: #788257;         /* block_1 */
+    --c-btn2-hover-bg: #788257;     /* block_1 */
+    --c-btn2-hover-text: #F6FFD8;   /* block_7 */
 
-    --c-button-hover-bg: #A8CD98;
-
-    --c-card: #F6FFD8;
-    --c-button-text: #F6FFD8;
-    --c-dropdown-hover-text: #F6FFD8;
-
-    --c-dropdown-card: #CEE5A3;
-
-    --c-bg: #DAF1C4;
-    
-    --c-prompt: #E9F3C8;
+    /* button 3 */
+    --c-danger-bg: #D29D6E;         /* block_9 */
+    --c-danger-hover-bg: #99380F;   /* block_10 */
+    --c-danger-text: #F6FFD8;       /* block_7 */
+    --c-danger-hover-text: #F9F0A9; /* block_8 */
 }
 
-html, body {
+
+html,
+body {
     margin: 0;
     padding: 0;
     border: 0;
@@ -48,9 +49,10 @@ html, body {
 }
 
 body {
-    background-color: #DAF1C4;
-    
+    background-color: var(--c-bg);
+    color: var(--c-text);
 }
+
 
 .w-color-wheel-pointer {
     width: min-content;
@@ -65,11 +67,36 @@ body {
 /* Chrome, Edge, Safari */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
 input[type="number"] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+/* =========================
+   App Icon System (Safe)
+   ========================= */
+
+.appIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-icon);
+}
+
+.appIcon svg {
+  width: 100%;
+  height: 100%;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.appIconFilled svg {
+  fill: currentColor !important;
+  stroke: none !important;
 }

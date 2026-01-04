@@ -1,8 +1,8 @@
 import TextButton from "../components/buttons/TextButton/TextButton";
-import UserAvatar from "../components/avatars/UserAvatar";
+import UserAvatar from "../components/avatar/UserAvatar";
 import styles from "./App.module.css";
-import Text from "../components/texts/Text";
-import MenuDropDown from "../components/drop_downs/MenuDropDown";
+import Text from "../components/text/Text";
+import MenuDropDown from "../components/drop_down/MenuDropDown";
 import { useTransition } from "../providers/TransitionProvider";
 import shika from "../images/shika.jpg";
 
@@ -12,19 +12,22 @@ function App() {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <MenuDropDown/>
+                <MenuDropDown />
             </div>
+
             <div className={styles.body}>
-                <UserAvatar url={shika}/>
-                <Text text="Welcome, Luna (●'◡'●)" textClass={styles.text}/>
-                <TextButton 
-                    text="Start" 
-                    buttonClass={styles.mainBtn}
-                    onClick={() => go("/timer")}
-                />
+                <div className={styles.hero}>
+                    <UserAvatar url={shika} />
+                    <Text text="Welcome, Luna (●'◡'●)" textClass={styles.text} />
+                    <TextButton
+                        text="Start"
+                        buttonClass={styles.mainBtn}
+                        onClick={() => go("/timer")}
+                    />
+                </div>
             </div>
         </div>
     );
 }
 
-export default App
+export default App;

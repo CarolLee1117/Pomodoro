@@ -11,8 +11,8 @@
 
 .card{
   width: min(680px, 92vw);
-  background: var(--c-prompt);
-  border-radius: 12px;
+  background: var(--c-card);
+  border-radius: 5px;
   padding: 38px 28px 32px;
   display: flex;
   flex-direction: column;
@@ -23,51 +23,52 @@
 
 .cycleText{
   font-family: var(--font-annapurna);
-  font-size: 18px;
-  color: rgba(0,0,0,.45);
+  font-size: 20px;
+  color: var(--c-text);
 }
 
 .pill{
-  padding: 10px 44px;
+  padding: 2px 44px;
   border-radius: 999px;
-  background: rgba(0,0,0,.06);
+  background: var(--c-surface);
 }
 
 .pillText{
   font-family: var(--font-annapurna);
-  font-size: 18px;
-  color: rgba(0,0,0,.45);
+  font-size: 20px;
+  color: var(--c-text);
 }
 
 .timeText{
-  font-family: var(--font-angkor);
-  font-size: 64px;
-  color: rgba(0,0,0,.45);
+  font-family: var(--font-annapurna);
+  font-size: 70px;
+  font-weight: 800;
+  color: var(--c-text);
   letter-spacing: 6px;
   margin-top: 6px;
 }
 
 .progressWrap{
   width: min(520px, 78vw);
-  height: 28px;
+  height: 30px;
   border-radius: 999px;
-  background: rgba(0,0,0,.08);
+  background: var(--c-surface);
   overflow: hidden;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .progressBar{
   height: 100%;
   width: 50%;
   border-radius: 999px;
-  background: rgba(120, 130, 87, .55);
+  background: var(--c-btn-hover-bg);
   transition: width .25s ease;
 }
 
 .completedText{
   font-family: var(--font-annapurna);
-  font-size: 14px;
-  color: rgba(0,0,0,.45);
+  font-size: 20px;
+  color: var(--c-btn-hover-bg);
   margin-top: 2px;
 }
 
@@ -79,32 +80,48 @@
 }
 
 .pauseBtn{
-  background-color: var(--c-button);
+  background-color: var(--c-btn-bg);
 }
 .pauseBtn:hover{
-  background-color: var(--c-button-hover-bg);
+  background-color: var(--c-btn-hover-bg);
+}
+
+.btnText1{
+  color: var(--c-btn-text);
+}
+
+.btnText1:hover{
+  color: var(--c-btn-hover-text);
 }
 
 .resetBtn{
-  background-color: var(--c-card);
+  background-color: var(--c-btn2-bg);
 }
 .resetBtn:hover{
-  background-color: var(--c-prompt);
+  background-color: var(--c-btn2-hover-bg);
+}
+
+.btnText2{
+  color: var(--c-btn2-text);
+}
+
+.btnText2:hover{
+  color: var(--c-btn2-hover-text);
 }
 
 .abortBtn{
-  background-color: #D39A6C;
+  background-color: var(--c-danger-bg);
 }
 .abortBtn:hover{
-  background-color: #C98E60;
+  background-color: var(--c-danger-hover-bg);
 }
 
-.btnText{
-  color: var(--c-card);
+.btnText3{
+  color: var(--c-danger-text);
 }
 
-.btnTextDark{
-  color: rgba(0,0,0,.45);
+.btnText3:hover{
+  color: var(--c-danger-hover-text);
 }
 
 @media (max-width: 520px){

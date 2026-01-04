@@ -24,10 +24,7 @@ export default function SquareIconButton({
         <button
             type="button"
             className={`${styles.button} ${buttonClass}`}
-            style={{
-                width: buttonSize,
-                height: buttonSize,
-            }}
+            style={{ ["--size" as any]: `${size}px` }}
             onClick={onClick}
             disabled={disabled}
             aria-label="icon button"

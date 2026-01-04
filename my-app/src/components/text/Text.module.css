@@ -4,6 +4,6 @@
 }
 
 .text > p {
-    color: #788257;
+    color: var(--c-text);
     text-align: center;
 }

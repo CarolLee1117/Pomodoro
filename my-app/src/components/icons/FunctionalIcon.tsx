@@ -16,7 +16,7 @@ function FunctionalIcon ({
     onClick
 }: functionalIconProps) {
     const { go } = useTransition();
-    const className = `${styles.icon} ${iconClass}`;
+    const className = `${styles.icon} appIcon ${iconClass}`;
 
     const handleClick = () => {
         onClick?.();

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./TimerRunning.module.css";
 import TextButton from "../components/buttons/TextButton/TextButton";
-import Text from "../components/texts/Text";
+import Text from "../components/text/Text";
 
 
 type Mode = "focus" | "break";
@@ -95,19 +95,19 @@ export default function TimerRunning({
                 <TextButton
                 text={isPaused ? "Resume" : "Pause"}
                 buttonClass={styles.pauseBtn}
-                textClass={styles.btnText}
+                textClass={styles.btnText1}
                 onClick={() => setIsPaused((p) => !p)}
                 />
                 <TextButton
                 text="Reset"
                 buttonClass={styles.resetBtn}
-                textClass={styles.btnTextDark}
+                textClass={styles.btnText2}
                 onClick={onReset}
                 />
                 <TextButton
                 text="Abort"
                 buttonClass={styles.abortBtn}
-                textClass={styles.btnText}
+                textClass={styles.btnText3}
                 onClick={onAbort}
                 />
             </div>

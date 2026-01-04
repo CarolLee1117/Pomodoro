@@ -24,7 +24,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
     height: 750px;
     width: min-content;
     justify-content: flex-end;
@@ -39,7 +38,7 @@
     height: 600px;
     padding: 40px 50px 40px 60px;
     gap: 80px;
-    background-color: #F6FFD8;
+    background-color: var(--c-card);
     border-radius: 8px;
 }
 
@@ -82,9 +81,9 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #E9F3C8;
+    background-color: var(--c-surface);
     border-radius: 8px;
-    color: #788257;
+    color: var(--c-text);
     height: 50px;
     width: 200px;
     font-size: 30px;
@@ -123,18 +122,18 @@
 }
 
 .usageText {
-    color: #788257;
+    color: var(--c-text);
     height: 60px;
-    width: 632px;
+    width: 700px;
     margin-top: 20px;
-    font-size: 32px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .promptText {
-    color: #788257;
+    color: var(--c-text);
     height: 60px;
     width: 632px;
     margin-top: 20px;
@@ -142,7 +141,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #E9F3C8;
+    background-color: var(--c-surface);
     border-radius: 8px;
 }
 
@@ -150,22 +149,37 @@
     display: flex;
     align-items: flex-end;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 20px;
 }
 
 .resetBtn {
-    width: 200px;
+    width: 160px;
     height: 80px;
-    align-items: center
+    align-items: center;
+    background-color: var(--c-btn2-bg);
+}
+
+.resetBtn:hover {
+    background-color: var(--c-btn2-hover-bg);
+}
+
+.resetBtnText {
+    color: var(--c-btn2-text);
+    font-size: 40px;
+}
+
+.resetBtnText:hover {
+    color: var(--c-btn2-hover-text);
 }
 
 .saveBtn {
-    width: 170px;
+    width: 150px;
     height: 80px;
     align-items: center
 }
 
-.mainBtnText {
+.saveBtnText {
     font-size: 40px;
 }
+

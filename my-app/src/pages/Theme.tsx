@@ -1,9 +1,9 @@
 import styles from "./Theme.module.css";
-import MenuDropDown from "../components/drop_downs/MenuDropDown";
+import MenuDropDown from "../components/drop_down/MenuDropDown";
 import FunctionalIcon from "../components/icons/FunctionalIcon";
 import HomeIcon from "../components/icons/icons/HomeIcon";
 import TextButton from "../components/buttons/TextButton/TextButton";
-import Text from "../components/texts/Text";
+import Text from "../components/text/Text";
 import Sample from "../components/sample/Sample";
 import WheelSet from "../components/color_picker/WheelSet";
 import ColorBlock from "../components/color_picker/ColorBlock";
@@ -115,13 +115,13 @@ function Theme() {
             <TextButton
                 text="Reset"
                 buttonClass={styles.resetBtn}
-                textClass={styles.mainBtnText}
+                textClass={styles.resetBtnText}
                 onClick={handleReset}
             />
             <TextButton
                 text="Save"
                 buttonClass={styles.saveBtn}
-                textClass={styles.mainBtnText}
+                textClass={styles.saveBtnText}
                 onClick={handleSave}
             />
             </div>

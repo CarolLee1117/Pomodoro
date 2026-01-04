@@ -1,0 +1,26 @@
+.card {
+    background: var(--c-surface);
+    border-radius: 5px;
+    padding: 14px 16px;
+    min-width: 150px;
+}
+
+.label {
+    color: var(--c-btn-hover-bg);
+    font-family: var(--font-annapurna);
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.value {
+    margin-top: 10px;
+    background: rgba(120, 130, 87, 0.08);
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-align: center;
+
+    color: var(--c-text);
+    font-family: var(--font-annapurna);
+    font-size: 40px;
+    line-height: 1;
+}

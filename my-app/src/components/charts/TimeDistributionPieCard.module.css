@@ -1,0 +1,11 @@
+.card {
+    background: var(--c-surface);
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.inner {
+    background: rgba(120, 130, 87, 0.08);
+    border-radius: 5px;
+    padding: 10px;
+}

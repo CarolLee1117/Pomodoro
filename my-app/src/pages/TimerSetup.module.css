@@ -37,7 +37,7 @@
 .topicText {
     font-size: 40px;
     font-weight: 500;
-    color: var(--c-main-text);
+    color: var(--c-text);
     text-align: center;
     margin-top: 10px;
     margin-bottom: 30px;
@@ -62,25 +62,34 @@
 }
 
 .fieldTab:hover {
-    background-color: #E9F3C8;
+    background-color: var(--c-surface);
     box-shadow: none;
 }
 
 .fieldTabActive {
-    background-color: #DAF1C4;
+    background-color: var(--c-bg);
     box-shadow: none;
 }
 
 .activeField {
-    color: var(--c-main-text);
+    color: var(--c-text);
     font-size: 30px;
     font-weight: inherit;
     background-color: transparent;
 }
 
+.activeField:hover {
+    color: var(--c-text)
+}
+
 .inactiveField {
-    color: var(--c-main-text);
+    color: var(--c-text);
+    font-weight: inherit;
     font-size: 30px;
+}
+
+.inactiveField:hover {
+    color: var(--c-text)
 }
 
 .controlBtn {
@@ -91,32 +100,33 @@
 .valueBox {
     display: flex;
     align-items: center;
-    background: var(--c-prompt);
+    background: var(--c-surface);
     border-radius: 5px;
     padding: 10px 12px;
 }
 
 .numberInput {
+    font-family: var(--font-annapurna);
     width: 90px;
     border: none;
     outline: none;
     background: transparent;
     font-size: 50px;
     font-weight: 800;
-    color: var(--c-main-text);
+    color: var(--c-text);
     text-align: center;
 }
 
 .numberInput::selection {
-  background-color: rgba(120, 130, 87, 0.4);
-  color: #F6FFD8;
+  background-color: color-mix(in srgb, var(--c-text) 40%, transparent);
+  color: var(--c-card);
 }
 
 
 .unitText {
     display: flex;
     justify-content: center;
-    color: var(--c-secondary-text);
+    color: var(--c-btn-hover-bg);
     font-size: 20px;
     margin-bottom: 20px;
 }
@@ -140,21 +150,21 @@
     width: 170px;
     height: 70px;
     border-radius: 10px;
-    background-color: #F6FFD8;
+    background-color: var(--c-btn2-bg);
     transition: all 0.2s linear;
 }
 
 .backBtn:hover {
-    background-color: var(--c-main-text);
+    background-color: var(--c-btn2-hover-bg);
 }
 
 .backText {
-    color: #788257;
+    color: var(--c-btn2-text);
     transition: all 0.2s linear;
 }
 
 .backBtn:hover .backText {
-    color: var(--c-button-text);
+    color: var(--c-btn2-hover-text);
 }
 
 

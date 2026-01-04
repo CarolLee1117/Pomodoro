@@ -25,7 +25,7 @@ export default function IconButton({
 }: Props) {
     const content = (
         <>
-            <div className={`${styles.iconContainer} ${iconClass}`}
+            <div className={`${styles.iconContainer} appIcon ${iconClass}`}
                 style={{ width: iconSize, height: iconSize }}>
                 <Icon />
             </div>

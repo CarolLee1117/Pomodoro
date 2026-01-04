@@ -1,12 +1,12 @@
 import styles from "./TimerSetup.module.css";
-import MenuDropDown from "../components/drop_downs/MenuDropDown";
+import MenuDropDown from "../components/drop_down/MenuDropDown";
 import FunctionalIcon from "../components/icons/FunctionalIcon";
 import SquareIconButton from "../components/buttons/SquareIconButton/SquareIconButton";
 import HomeIcon from "../components/icons/icons/HomeIcon";
 import MinusIcon from "../components/icons/icons/MinusIcon";
 import PlusIcon from "../components/icons/icons/PlusIcon";
 import TextButton from "../components/buttons/TextButton/TextButton";
-import Text from "../components/texts/Text";
+import Text from "../components/text/Text";
 import { useState } from "react";
 import { useTransition } from "../providers/TransitionProvider";
 

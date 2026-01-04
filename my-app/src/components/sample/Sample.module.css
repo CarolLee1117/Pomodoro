@@ -26,7 +26,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    background-color: var(--c-prompt);
+    background-color: var(--c-surface);
     padding: 20px 30px 20px 30px;
     border-radius: 10px;
 }
@@ -39,7 +39,7 @@
 }
 
 .card {
-    background-color: var(--c-dropdown-card);
+    background-color: var(--c-dropdown);
     padding: 10px;
     border-radius: 10px;
     display: flex;
@@ -59,11 +59,11 @@
 }
 
 .iconText {
-    color: var(--c-dropdown-text);
+    color: var(--c-icon);
 }
 
 .iconText:hover {
-    color: var(--c-dropdown-hover-text);
+    color: var(--c-card);
 }
 
 .textLabel {
@@ -71,49 +71,98 @@
 }
 
 .dropdownBtn {
-    height: 50px;
-    width: 230px;
+    height: 35px;
+    width: 250px;
     justify-content: center;
-    background-color: var(--c-dropdown-card);
+    background-color: var(--c-dropdown);
 }
 
 .dropdownBtn:hover {
-    background-color: var(--c-dropdown-hover-bg);
+    background-color: var(--c-btn-bg);
 }
 
-.buttonText {
-    font-size: 25px;
-    color: var(--c-button-text);
+.buttonText1 {
+    font-size: 20px;
+    color: var(--c-btn-text);
 
 }
 
-.buttonText:hover {
-    color: var(--c-button-hover-text);
-    /* 這邊有問題，不能變色 */
+.buttonText1:hover {
+    color: var(--c-btn-hover-text);
 }
 
-.button {
+.button1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 50px;
-    border-radius: 30px;
-    background-color: var(--c-button);
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: var(--c-btn-bg);
 }
 
-.button:hover {
-    background-color: var(--c-button-hover-bg);
+.button1:hover {
+    background-color: var(--c-btn-hover-bg);
+}
+
+.buttonText2 {
+    font-size: 20px;
+    color: var(--c-btn2-text);
+}
+
+.buttonText2:hover {
+    color: var(--c-btn2-hover-text);
+}
+
+.button2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: var(--c-btn2-bg);
+}
+
+.button2:hover {
+    background-color: var(--c-btn2-hover-bg);
+}
+
+.buttonText3 {
+    font-size: 20px;
+    color: var(--c-danger-text);
+
+}
+
+.buttonText3:hover {
+    color: var(--c-danger-hover-text);
+}
+
+.button3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: var(--c-danger-bg);
+}
+
+.button3:hover {
+    background-color: var(--c-danger-hover-bg);
 }
 
 .mainText {
     font-size: 22px;
-    color: var(--c-main-text);
+    color: var(--c-text);
     padding-top: 20px;
 }
 
-.secondaryText {
-    font-size: 22px;
-    color: var(--c-secondary-text);
+.btnRow {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }

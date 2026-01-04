@@ -1,31 +1,43 @@
-.button .iconContainer,
-.button .iconText {
-    color: inherit;
-}
-
 .button {
     display: flex;
     flex-direction: row;
     gap: 10px;
     border-radius: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 12px;
-    padding-right: 20px;
+    padding: 3px 20px 3px 12px;
     width: 200px;
+    height: 75px;
+
     font-size: 35px;
     font-family: var(--font-annapurna);
-    color: var(--c-icon);
+
+    color: var(--c-text);
     background-color: transparent;
-    position: relative;
-    height: 75px;
+
     align-items: center;
     user-select: none;
+    position: relative;
 }
 
 .button:hover {
-    color: var(--c-dropdown-hover-text);
-    background-color: var(--c-button);
+    color: var(--c-card);
+    background-color: var(--c-btn-bg);
+}
+
+.text {
+    color: inherit;
+}
+
+.iconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    color: inherit;
+}
+
+.iconContainer > svg {
+    width: 100%;
+    height: 100%;
 }
 
 .iconButtonLink {
@@ -38,20 +50,4 @@
 .iconButtonLink:visited {
     text-decoration: none;
     color: inherit;
-}
-
-.text {
-    color: inherit;
-}
-
-.iconContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 0 0 auto;
-}
-
-.iconContainer>svg {
-    width: 100%;
-    height: 100%;
 }
