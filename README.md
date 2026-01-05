@@ -1,4 +1,10 @@
 # 番茄鐘（Pomodoro）
+
+## Live Demo
+https://pomodoro-eight-lake.vercel.app/
+> Note: This project is currently focused on core functionality and deployment.  
+> Responsive layout and UI refinements are still under active iteration.
+
 ## 使用者故事（User Story）
 本節用於描述使用者在實際使用番茄鐘時的核心需求與使用動機。
 
@@ -14,7 +20,6 @@
 
 6. 作為使用者，我希望能自訂主題顏色，以便提升使用時的舒適度與專注感。
 
----
 
 ## 資訊架構（Information Architecture, IA）
 <img width="1780" height="679" alt="image" src="https://github.com/user-attachments/assets/0314e67c-09a9-4eba-bf09-d188bd470925" />
@@ -29,7 +34,6 @@
 
 - 本架構刻意減少頁面數量，以降低狀態分散與導覽複雜度
 
----
 
 ## 功能地圖（Functional Map）
 <img width="1157" height="1045" alt="image" src="https://github.com/user-attachments/assets/08bc53af-fc18-4afe-bdd8-90034d94595a" />
@@ -44,7 +48,6 @@
 
 - 本圖僅描述功能層級，不包含實作技術、API 或資料儲存細節
 
----
 
 ## 內容清單（Content Inventory）
 盤點各頁面實際呈現的資訊內容與介面元素，作為後續 UI Flow 與實作階段的對照依據。
@@ -109,7 +112,14 @@
 
 
 ## 切版（Layout）
-本專案採用元件化方式進行切版，依畫面結構與功能區塊拆分為可重用的 UI 元件，以提升維護性與擴充性。實作過程依據線稿圖與 UI Flow 規劃版型結構，並逐步完成桌機與行動裝置的 RWD 調整，確保不同裝置下皆有良好使用體驗。
+本專案採用元件化方式進行切版，依畫面結構與功能區塊拆分為可重用的 UI 元件，以提升維護性與擴充性。實作過程中以桌機版為主要開發基準，並逐步補齊行動裝置的 RWD 調整，確保版型在不同裝置下仍維持可用性與結構一致性。
+
 
 ## 實作（Implementation）
-前端實作以 React 為核心，依功能模組拆分元件，並透過狀態管理處理番茄鐘的專注、休息與循環流程。目前已完成需求規劃與資料模型設計，實作階段優先完成 Timer、Insights、Theme 核心功能，並逐步補齊音效提示、畫面提示等延伸功能，使專案可持續擴充與優化。
+前端實作以 React 為核心，依功能模組拆分元件，並透過狀態管理處理番茄鐘的專注、休息與循環流程。目前專案已完成 Timer、Insights、Theme 核心功能實作，部分 UI 細節與 RWD 仍在持續調整中。
+
+## Project Status
+- Core timer flow completed
+- Insights with mock data implemented
+- Theme system supports global CSS variables
+- UI refinements and RWD improvements are ongoing
