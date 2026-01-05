@@ -125,7 +125,6 @@ export default function TimerSetup({
                         <SquareIconButton
                             icon={MinusIcon}
                             size={80}
-                            padding={5}
                             buttonClass={styles.controlBtn}
                             onClick={() => changeBy(-current.step)}
                         />
@@ -141,7 +140,6 @@ export default function TimerSetup({
                         <SquareIconButton
                             icon={PlusIcon}
                             size={80}
-                            padding={5}
                             buttonClass={styles.controlBtn}
                             onClick={() => changeBy(+current.step)}
                         />

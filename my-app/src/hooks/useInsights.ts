@@ -128,8 +128,6 @@ export const useInsights = () => {
             .filter((s) => s.mode === "pause")
             .reduce((sum, s) => sum + s.minutes, 0);
 
-        const uncompleted = sessions.filter((s) => s.mode === "focus" && !s.completed).length;
-
         return [
             { name: "Focus Time", value: focus },
             { name: "Break Time", value: brk },

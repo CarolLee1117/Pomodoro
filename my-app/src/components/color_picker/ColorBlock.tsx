@@ -17,7 +17,7 @@ export default function ColorBlock({
 }: ColorBlockProps) {
     const isActive = activeIndex === index;
 
-    const handleClick = (e: MouseEvent<HTMLDivElement>) => {
+    const handleClick = (_e: MouseEvent<HTMLDivElement>) => {
         if (isActive)  return;
         onSelect(index, color);     // ← 直接把 hex 帶回父層
     };

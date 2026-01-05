@@ -23,7 +23,7 @@ export default function TimeDistributionPieCard({ data }: Props) {
                 <ResponsiveContainer width="100%" height={260}>
                     <PieChart>
                         <Pie
-                            data={data}
+                            data={filteredData}
                             dataKey="value"
                             nameKey="name"
                             cx="40%"
@@ -33,7 +33,7 @@ export default function TimeDistributionPieCard({ data }: Props) {
                             stroke="var(--c-card)"
                             strokeWidth={1}
                         >
-                            {data.map((_, i) => (
+                            {filteredData.map((_, i) => (
                                 <Cell key={i} fill={COLORS[i % COLORS.length]} />
                             ))}
                         </Pie>

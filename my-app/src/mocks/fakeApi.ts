@@ -3,7 +3,7 @@ import { MOCK_SESSIONS } from "./data";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-const inRange = (date: string, range: Range) => {
+const inRange = (_date: string, _range: Range) => {
     return true;
 };
 

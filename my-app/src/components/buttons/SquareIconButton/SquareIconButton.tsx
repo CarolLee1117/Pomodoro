@@ -6,7 +6,6 @@ type Props = {
     onClick?: () => void;
     disabled?: boolean;
     size?: number;
-    padding?: number;
     buttonClass?: string;
 };
 
@@ -15,10 +14,8 @@ export default function SquareIconButton({
     onClick,
     disabled = false,
     size = 45,
-    padding = 16,
     buttonClass = "",
 }: Props) {
-    const buttonSize = size + padding * 2;
 
     return (
         <button

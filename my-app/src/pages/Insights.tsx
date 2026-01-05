@@ -3,8 +3,6 @@ import MenuDropDown from "../components/drop_down/MenuDropDown";
 import FunctionalIcon from "../components/icons/FunctionalIcon";
 import HomeIcon from "../components/icons/icons/HomeIcon";
 import Text from "../components/text/Text";
-import TextButton from "../components/buttons/TextButton/TextButton";
-
 import { useTransition } from "../providers/TransitionProvider";
 import { useInsights } from "../hooks/useInsights";
 
