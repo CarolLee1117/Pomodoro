@@ -18,7 +18,7 @@ function App() {
             <div className={styles.body}>
                 <div className={styles.hero}>
                     <UserAvatar url={shika} />
-                    <Text text="Welcome, Luna (●'◡'●)" textClass={styles.text} />
+                    <Text text="Welcome to my Pomodoro App! (●'◡'●)" textClass={styles.text} />
                     <TextButton
                         text="Start"
                         buttonClass={styles.mainBtn}
