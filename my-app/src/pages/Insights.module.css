@@ -4,6 +4,8 @@
     padding: 24px;
     color: var(--c-text);
     font-family: var(--font-annapurna);
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .header {
@@ -18,7 +20,7 @@
 }
 
 .content {
-    min-height: 100vh;
+    min-height: calc(100vh - 48px);
     display: flex;
     justify-content: center;
     align-items: center;

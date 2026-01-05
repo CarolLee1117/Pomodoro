@@ -7,6 +7,7 @@ export const THEME_TOKEN_KEYS = [
   "--c-btn2-hover-bg",
   "--c-btn-hover-bg",
   "--c-bg",
+  "--c-secondary-text",
   "--c-btn-hover-text",
   "--c-dropdown",
   "--c-btn-bg",
@@ -30,6 +31,7 @@ export const DEFAULT_THEME_VARS: ThemeVars = {
   "--c-btn2-hover-bg": "#788257",
 
   "--c-btn-hover-bg": "#57825B",
+  "--c-secondary-text": "#578258",
 
   "--c-bg": "#DAF1C4",
   "--c-btn-hover-text": "#DAF1C4",
@@ -186,6 +188,7 @@ export const useThemePalette = () => {
       ["--c-card" as any]: b7,
       ["--c-surface" as any]: b6,
       ["--c-dropdown" as any]: b4,
+      ["--c-secondary-text" as any]: b2,
 
       // button 1
       ["--c-btn-bg" as any]: b5,

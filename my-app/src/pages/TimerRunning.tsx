@@ -79,13 +79,13 @@ export default function TimerRunning({
                 <Text text={`Cycle ${currentCycle}/${cycles}`} textClass={styles.cycleText} />
 
                 <div className={styles.pill}>
-                <Text text={mode === "focus" ? "Focus" : "Break"} textClass={styles.pillText} />
+                    <Text text={mode === "focus" ? "Focus" : "Break"} textClass={styles.pillText} />
                 </div>
 
                 <Text text={`${mm} : ${ss}`} textClass={styles.timeText} />
 
                 <div className={styles.progressWrap}>
-                <div className={styles.progressBar} style={{ width: `${pct}%` }} />
+                    <div className={styles.progressBar} style={{ width: `${pct}%` }} />
                 </div>
 
                 <Text text={`${pct}% completed`} textClass={styles.completedText} />
@@ -93,22 +93,22 @@ export default function TimerRunning({
 
             <div className={styles.buttonsRow}>
                 <TextButton
-                text={isPaused ? "Resume" : "Pause"}
-                buttonClass={styles.pauseBtn}
-                textClass={styles.btnText1}
-                onClick={() => setIsPaused((p) => !p)}
+                    text={isPaused ? "Resume" : "Pause"}
+                    buttonClass={styles.pauseBtn}
+                    textClass={styles.btnText1}
+                    onClick={() => setIsPaused((p) => !p)}
                 />
                 <TextButton
-                text="Reset"
-                buttonClass={styles.resetBtn}
-                textClass={styles.btnText2}
-                onClick={onReset}
+                    text="Reset"
+                    buttonClass={styles.resetBtn}
+                    textClass={styles.btnText2}
+                    onClick={onReset}
                 />
                 <TextButton
-                text="Abort"
-                buttonClass={styles.abortBtn}
-                textClass={styles.btnText3}
-                onClick={onAbort}
+                    text="Abort"
+                    buttonClass={styles.abortBtn}
+                    textClass={styles.btnText3}
+                    onClick={onAbort}
                 />
             </div>
         </div>

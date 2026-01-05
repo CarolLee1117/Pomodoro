@@ -1,4 +1,4 @@
-.container{
+.container {
   min-height: 100vh;
   background: var(--c-bg);
   display: flex;
@@ -9,7 +9,7 @@
   padding: 32px 16px;
 }
 
-.card{
+.card {
   width: min(680px, 92vw);
   background: var(--c-card);
   border-radius: 5px;
@@ -18,28 +18,28 @@
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
 }
 
-.cycleText{
+.cycleText {
   font-family: var(--font-annapurna);
   font-size: 20px;
   color: var(--c-text);
 }
 
-.pill{
+.pill {
   padding: 2px 44px;
   border-radius: 999px;
   background: var(--c-surface);
 }
 
-.pillText{
+.pillText {
   font-family: var(--font-annapurna);
   font-size: 20px;
   color: var(--c-text);
 }
 
-.timeText{
+.timeText {
   font-family: var(--font-annapurna);
   font-size: 70px;
   font-weight: 800;
@@ -48,7 +48,7 @@
   margin-top: 6px;
 }
 
-.progressWrap{
+.progressWrap {
   width: min(520px, 78vw);
   height: 30px;
   border-radius: 999px;
@@ -57,7 +57,7 @@
   margin-top: 5px;
 }
 
-.progressBar{
+.progressBar {
   height: 100%;
   width: 50%;
   border-radius: 999px;
@@ -65,69 +65,79 @@
   transition: width .25s ease;
 }
 
-.completedText{
+.completedText {
   font-family: var(--font-annapurna);
   font-size: 20px;
-  color: var(--c-btn-hover-bg);
+  color: var(--c-secondary-text);
   margin-top: 2px;
 }
 
-.buttonsRow{
+.buttonsRow {
   display: flex;
   gap: 26px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.pauseBtn{
+.pauseBtn {
   background-color: var(--c-btn-bg);
 }
-.pauseBtn:hover{
+
+.pauseBtn:hover {
   background-color: var(--c-btn-hover-bg);
 }
 
-.btnText1{
+.btnText1 {
   color: var(--c-btn-text);
 }
 
-.btnText1:hover{
+.btnText1:hover {
   color: var(--c-btn-hover-text);
 }
 
-.resetBtn{
+.resetBtn {
   background-color: var(--c-btn2-bg);
 }
-.resetBtn:hover{
+
+.resetBtn:hover {
   background-color: var(--c-btn2-hover-bg);
 }
 
-.btnText2{
+.btnText2 {
   color: var(--c-btn2-text);
 }
 
-.btnText2:hover{
+.resetBtn:hover .btnText2 {
   color: var(--c-btn2-hover-text);
 }
 
-.abortBtn{
+.abortBtn {
   background-color: var(--c-danger-bg);
 }
-.abortBtn:hover{
+
+.abortBtn:hover {
   background-color: var(--c-danger-hover-bg);
 }
 
-.btnText3{
+.btnText3 {
   color: var(--c-danger-text);
 }
 
-.btnText3:hover{
+.abortBtn:hover .btnText3 {
   color: var(--c-danger-hover-text);
 }
 
-@media (max-width: 520px){
-  .card{ padding: 28px 18px; }
-  .timeText{ font-size: 52px; letter-spacing: 4px; }
-  .buttonsRow{
+@media (max-width: 520px) {
+  .card {
+    padding: 28px 18px;
+  }
+
+  .timeText {
+    font-size: 52px;
+    letter-spacing: 4px;
+  }
+
+  .buttonsRow {
     flex-direction: column;
     width: 100%;
     align-items: center;

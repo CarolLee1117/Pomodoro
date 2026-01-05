@@ -155,7 +155,7 @@
 
 .resetBtn {
     width: 160px;
-    height: 80px;
+    height: 70px;
     align-items: center;
     background-color: var(--c-btn2-bg);
 }
@@ -175,7 +175,7 @@
 
 .saveBtn {
     width: 150px;
-    height: 80px;
+    height: 70px;
     align-items: center
 }
 

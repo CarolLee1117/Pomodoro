@@ -39,6 +39,6 @@
     font-weight: 700;
 }
 
-.label:hover {
+.button:hover .label {
     color: var(--c-btn-hover-text);
 }

@@ -78,7 +78,7 @@
     background-color: transparent;
 }
 
-.activeField:hover {
+.fieldTab:hover .activeField {
     color: var(--c-text)
 }
 
@@ -88,7 +88,7 @@
     font-size: 30px;
 }
 
-.inactiveField:hover {
+.fieldTab:hover .inactiveField {
     color: var(--c-text)
 }
 
@@ -126,7 +126,7 @@
 .unitText {
     display: flex;
     justify-content: center;
-    color: var(--c-btn-hover-bg);
+    color: var(--c-secondary-text);
     font-size: 20px;
     margin-bottom: 20px;
 }
